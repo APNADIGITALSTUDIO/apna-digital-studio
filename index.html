@@ -7,6 +7,10 @@
 <title>APNA DIGITAL STUDIO</title>
 
 <style>
+* {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
     font-family: Arial, sans-serif;
@@ -14,225 +18,392 @@ body {
     color: #222;
 }
 
+/* Header */
 header {
     background: linear-gradient(135deg, #005bea, #00c6fb);
     color: white;
     text-align: center;
-    padding: 45px 20px;
+    padding: 50px 20px;
 }
 
 header h1 {
     font-size: 38px;
-    margin: 0 0 10px;
+    margin: 0 0 12px;
 }
 
+header p {
+    font-size: 18px;
+    margin: 8px 0;
+}
+
+/* Main Container */
 .container {
-    max-width: 1000px;
+    max-width: 1100px;
     margin: auto;
     padding: 30px 20px;
 }
 
-.about, .service, .contact {
-    background: white;
-    padding: 25px;
-    border-radius: 15px;
-    margin-bottom: 20px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-}
-
+/* About */
 .about {
+    background: white;
+    padding: 28px;
+    border-radius: 18px;
+    margin-bottom: 30px;
     text-align: center;
+    box-shadow: 0 5px 18px rgba(0,0,0,0.08);
 }
 
-.about h2,
-.services-title {
+.about h2 {
     color: #005bea;
+    margin-top: 0;
 }
 
+/* Services Title */
 .services-title {
     text-align: center;
+    color: #005bea;
+    margin-bottom: 25px;
 }
 
+/* Services Grid */
 .services {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 18px;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 22px;
 }
 
+/* Service Card */
 .service {
+    background: white;
+    padding: 28px 20px;
+    border-radius: 18px;
     text-align: center;
     text-decoration: none;
     color: #222;
-    display: block;
-    transition: 0.3s;
+    box-shadow: 0 5px 18px rgba(0,0,0,0.08);
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
 }
 
 .service:hover {
-    transform: translateY(-5px);
+    transform: translateY(-8px);
+    border-color: #00aaff;
+    box-shadow: 0 12px 25px rgba(0,0,0,0.15);
 }
 
 .icon {
-    font-size: 40px;
+    font-size: 48px;
+    margin-bottom: 12px;
 }
 
 .service h3 {
     color: #005bea;
+    margin: 10px 0;
+    font-size: 21px;
 }
 
+.service p {
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* Contact */
 .contact {
     background: #005bea;
     color: white;
     text-align: center;
+    padding: 30px 20px;
+    border-radius: 18px;
+    margin-top: 35px;
 }
 
+.contact h2 {
+    margin-top: 0;
+}
+
+/* Buttons */
+.buttons {
+    text-align: center;
+    padding: 30px 15px;
+    background: white;
+}
+
+.btn {
+    display: inline-block;
+    color: white;
+    padding: 15px 28px;
+    text-decoration: none;
+    border-radius: 10px;
+    margin: 8px;
+    font-size: 18px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.call-btn {
+    background: #0d6efd;
+}
+
+.whatsapp-btn {
+    background: #25D366;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+}
+
+/* Footer */
 footer {
     background: #111;
     color: white;
     text-align: center;
     padding: 20px;
 }
+
+/* Mobile */
+@media (max-width: 600px) {
+
+    header h1 {
+        font-size: 30px;
+    }
+
+    header p {
+        font-size: 16px;
+    }
+
+    .container {
+        padding: 20px 15px;
+    }
+
+    .services {
+        grid-template-columns: 1fr;
+    }
+
+    .service {
+        padding: 25px 15px;
+    }
+}
 </style>
 </head>
 
 <body>
 
+<!-- Header -->
 <header>
+
     <h1>APNA DIGITAL STUDIO</h1>
+
     <p>CSC VLE - Narendra Kumar</p>
+
     <p>आपकी सभी डिजिटल सेवाएँ एक ही जगह</p>
+
 </header>
 
+
+<!-- Main -->
 <div class="container">
 
-<section class="about">
-    <h2>हमारे बारे में</h2>
-    <p>APNA DIGITAL STUDIO में CSC एवं विभिन्न डिजिटल और ऑनलाइन सेवाओं की सुविधा उपलब्ध है।</p>
-    <p>📍 Pratappur Block Road, Pratappur</p>
-</section>
+    <!-- About -->
+    <section class="about">
 
-<h2 class="services-title">हमारी डिजिटल सेवाएँ</h2>
+        <h2>हमारे बारे में</h2>
 
-<section class="services">
+        <p>
+            APNA DIGITAL STUDIO में CSC एवं विभिन्न डिजिटल
+            और ऑनलाइन सेवाओं की सुविधा उपलब्ध है।
+        </p>
 
-<!-- Aadhaar -->
-<a href="https://wa.me/917480949254?text=मुझे%20Aadhaar%20की%20सेवा%20चाहिए।"
-   target="_blank"
-   class="service">
+        <p>
+            📍 Pratappur Block Road, Pratappur
+        </p>
 
-    <div class="icon">🪪</div>
-    <h3>Aadhaar Services</h3>
-    <p>Aadhaar से संबंधित डिजिटल सेवाएँ</p>
+    </section>
 
-</a>
 
-<!-- PAN Card -->
-<a href="https://wa.me/917480949254?text=मुझे%20PAN%20Card%20की%20सेवा%20चाहिए।"
-   target="_blank"
-   class="service">
+    <!-- Services -->
+    <h2 class="services-title">
+        हमारी डिजिटल सेवाएँ
+    </h2>
 
-    <div class="icon">💳</div>
-    <h3>PAN Card</h3>
-    <p>PAN Card आवेदन एवं संबंधित सेवाएँ</p>
 
-</a>
+    <section class="services">
 
-<!-- Online Form -->
-<a href="https://wa.me/917480949254?text=मुझे%20Online%20Form%20भरवाना%20है।"
-   target="_blank"
-   class="service">
+        <!-- Aadhaar -->
+        <a href="https://wa.me/917480949254?text=मुझे%20Aadhaar%20की%20सेवा%20चाहिए।"
+           target="_blank"
+           class="service">
 
-    <div class="icon">📝</div>
-    <h3>Online Form</h3>
-    <p>सरकारी एवं अन्य ऑनलाइन फॉर्म</p>
+            <div class="icon">🪪</div>
 
-</a>
+            <h3>Aadhaar Services</h3>
 
-<!-- Print & Scan -->
-<a href="https://wa.me/917480949254?text=मुझे%20Print%20और%20Scan%20की%20सेवा%20चाहिए।"
-   target="_blank"
-   class="service">
+            <p>
+                Aadhaar से संबंधित डिजिटल सेवाएँ
+            </p>
 
-    <div class="icon">🖨️</div>
-    <h3>Print & Scan</h3>
-    <p>Print, Scan एवं दस्तावेज़ सेवाएँ</p>
+        </a>
 
-</a>
 
-<!-- Bill Payment -->
-<a href="https://wa.me/917480949254?text=मुझे%20Bill%20Payment%20की%20सेवा%20चाहिए।"
-   target="_blank"
-   class="service">
+        <!-- PAN -->
+        <a href="https://wa.me/917480949254?text=मुझे%20PAN%20Card%20की%20सेवा%20चाहिए।"
+           target="_blank"
+           class="service">
 
-    <div class="icon">💰</div>
-    <h3>Bill Payment</h3>
-    <p>विभिन्न प्रकार के बिल भुगतान</p>
+            <div class="icon">💳</div>
 
-</a>
+            <h3>PAN Card</h3>
 
-<!-- Money Transfer -->
-<a href="https://wa.me/917480949254?text=मुझे%20Money%20Transfer%20की%20सेवा%20चाहिए।"
-   target="_blank"
-   class="service">
+            <p>
+                PAN Card आवेदन एवं संबंधित सेवाएँ
+            </p>
 
-    <div class="icon">💸</div>
-    <h3>Money Transfer</h3>
-    <p>मनी ट्रांसफर की सुविधा</p>
+        </a>
 
-</a>
 
-<!-- Mobile Recharge -->
-<a href="https://wa.me/917480949254?text=मुझे%20Mobile%20और%20DTH%20Recharge%20करवाना%20है।"
-   target="_blank"
-   class="service">
+        <!-- Online Form -->
+        <a href="https://wa.me/917480949254?text=मुझे%20Online%20Form%20भरवाना%20है।"
+           target="_blank"
+           class="service">
 
-    <div class="icon">📱</div>
-    <h3>Mobile Recharge</h3>
-    <p>Mobile एवं DTH Recharge</p>
+            <div class="icon">📝</div>
 
-</a>
+            <h3>Online Form</h3>
 
-<!-- Government Services -->
-<a href="https://wa.me/917480949254?text=मुझे%20Government%20Services%20की%20जानकारी%20चाहिए।"
-   target="_blank"
-   class="service">
+            <p>
+                सरकारी एवं अन्य ऑनलाइन फॉर्म
+            </p>
 
-    <div class="icon">🏛️</div>
-    <h3>Government Services</h3>
-    <p>सरकारी योजनाओं से संबंधित ऑनलाइन सेवाएँ</p>
+        </a>
 
-</a>
 
-</section>
+        <!-- Print Scan -->
+        <a href="https://wa.me/917480949254?text=मुझे%20Print%20और%20Scan%20की%20सेवा%20चाहिए।"
+           target="_blank"
+           class="service">
 
-<section class="contact">
-    <h2>आज ही संपर्क करें</h2>
-    <p>APNA DIGITAL STUDIO</p>
-    <p>CSC VLE - Narendra Kumar</p>
-    <p>📍 Pratappur Block Road, Pratappur</p>
-</section>
+            <div class="icon">🖨️</div>
+
+            <h3>Print & Scan</h3>
+
+            <p>
+                Print, Scan एवं दस्तावेज़ सेवाएँ
+            </p>
+
+        </a>
+
+
+        <!-- Bill Payment -->
+        <a href="https://wa.me/917480949254?text=मुझे%20Bill%20Payment%20की%20सेवा%20चाहिए।"
+           target="_blank"
+           class="service">
+
+            <div class="icon">💰</div>
+
+            <h3>Bill Payment</h3>
+
+            <p>
+                विभिन्न प्रकार के बिल भुगतान
+            </p>
+
+        </a>
+
+
+        <!-- Money Transfer -->
+        <a href="https://wa.me/917480949254?text=मुझे%20Money%20Transfer%20की%20सेवा%20चाहिए।"
+           target="_blank"
+           class="service">
+
+            <div class="icon">💸</div>
+
+            <h3>Money Transfer</h3>
+
+            <p>
+                मनी ट्रांसफर की सुविधा
+            </p>
+
+        </a>
+
+
+        <!-- Mobile Recharge -->
+        <a href="https://wa.me/917480949254?text=मुझे%20Mobile%20और%20DTH%20Recharge%20करवाना%20है।"
+           target="_blank"
+           class="service">
+
+            <div class="icon">📱</div>
+
+            <h3>Mobile Recharge</h3>
+
+            <p>
+                Mobile एवं DTH Recharge
+            </p>
+
+        </a>
+
+
+        <!-- Government Services -->
+        <a href="https://wa.me/917480949254?text=मुझे%20Government%20Services%20की%20जानकारी%20चाहिए।"
+           target="_blank"
+           class="service">
+
+            <div class="icon">🏛️</div>
+
+            <h3>Government Services</h3>
+
+            <p>
+                सरकारी योजनाओं से संबंधित ऑनलाइन सेवाएँ
+            </p>
+
+        </a>
+
+    </section>
+
+
+    <!-- Contact -->
+    <section class="contact">
+
+        <h2>आज ही संपर्क करें</h2>
+
+        <p>APNA DIGITAL STUDIO</p>
+
+        <p>CSC VLE - Narendra Kumar</p>
+
+        <p>
+            📍 Pratappur Block Road, Pratappur
+        </p>
+
+    </section>
 
 </div>
 
-<footer>
-    © 2026 APNA DIGITAL STUDIO
-</footer>
 
-<div style="text-align:center;padding:30px;background:white;">
+<!-- Buttons -->
+<div class="buttons">
 
     <a href="tel:7480949254"
-       style="display:inline-block;background:#0d6efd;color:white;padding:15px 25px;
-              text-decoration:none;border-radius:8px;margin:10px;font-size:18px;">
-       📞 Call Now
+       class="btn call-btn">
+
+        📞 Call Now
+
     </a>
+
 
     <a href="https://wa.me/917480949254"
        target="_blank"
-       style="display:inline-block;background:#25D366;color:white;padding:15px 25px;
-              text-decoration:none;border-radius:8px;margin:10px;font-size:18px;">
-       💬 WhatsApp
+       class="btn whatsapp-btn">
+
+        💬 WhatsApp
+
     </a>
 
 </div>
+
+
+<!-- Footer -->
+<footer>
+
+    © 2026 APNA DIGITAL STUDIO
+
+</footer>
 
 </body>
 </html>
