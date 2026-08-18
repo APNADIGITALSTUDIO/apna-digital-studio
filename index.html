@@ -1,120 +1,89 @@
 <!DOCTYPE html>
 <html lang="hi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>APNA DIGITAL STUDIO</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+<title>APNA DIGITAL STUDIO</title>
 
-        body {
-            font-family: Arial, sans-serif;
-            background: #f2f6ff;
-            color: #222;
-        }
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f2f6ff;
+    color: #222;
+}
 
-        header {
-            background: linear-gradient(135deg, #005bea, #00c6fb);
-            color: white;
-            text-align: center;
-            padding: 45px 20px;
-        }
+header {
+    background: linear-gradient(135deg, #005bea, #00c6fb);
+    color: white;
+    text-align: center;
+    padding: 45px 20px;
+}
 
-        header h1 {
-            font-size: 38px;
-            margin-bottom: 10px;
-        }
+header h1 {
+    font-size: 38px;
+    margin: 0 0 10px;
+}
 
-        header p {
-            font-size: 18px;
-        }
+.container {
+    max-width: 1000px;
+    margin: auto;
+    padding: 30px 20px;
+}
 
-        .container {
-            max-width: 1000px;
-            margin: auto;
-            padding: 30px 20px;
-        }
+.about, .service, .contact {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
 
-        .about {
-            background: white;
-            padding: 25px;
-            border-radius: 15px;
-            text-align: center;
-            margin-bottom: 30px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-        }
+.about {
+    text-align: center;
+}
 
-        .about h2 {
-            color: #005bea;
-            margin-bottom: 10px;
-        }
+.about h2,
+.services-title {
+    color: #005bea;
+}
 
-        .services-title {
-            text-align: center;
-            color: #005bea;
-            margin-bottom: 20px;
-        }
+.services-title {
+    text-align: center;
+}
 
-        .services {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 18px;
-        }
+.services {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 18px;
+}
 
-        .service {
-            background: white;
-            padding: 25px 15px;
-            border-radius: 15px;
-            text-align: center;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-            transition: 0.3s;
-        }
+.service {
+    text-align: center;
+}
 
-        .service:hover {
-            transform: translateY(-5px);
-        }
+.icon {
+    font-size: 40px;
+}
 
-        .service .icon {
-            font-size: 40px;
-            margin-bottom: 10px;
-        }
+.service h3 {
+    color: #005bea;
+}
 
-        .service h3 {
-            color: #005bea;
-        }
+.contact {
+    background: #005bea;
+    color: white;
+    text-align: center;
+}
 
-        .contact {
-            margin-top: 30px;
-            background: #005bea;
-            color: white;
-            padding: 30px;
-            text-align: center;
-            border-radius: 15px;
-        }
-
-        .contact h2 {
-            margin-bottom: 15px;
-        }
-
-        footer {
-            text-align: center;
-            padding: 20px;
-            background: #111;
-            color: white;
-            margin-top: 30px;
-        }
-
-        @media (max-width: 600px) {
-            header h1 {
-                font-size: 28px;
-            }
-        }
-    </style>
+footer {
+    background: #111;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+</style>
 </head>
 
 <body>
@@ -127,71 +96,65 @@
 
 <div class="container">
 
-    <section class="about">
-        <h2>हमारे बारे में</h2>
-        <p>
-            APNA DIGITAL STUDIO में आपको CSC एवं विभिन्न
-            डिजिटल और ऑनलाइन सेवाओं की सुविधा उपलब्ध है।
-        </p>
-        <br>
-        <p>
-            📍 Block Road, Pratappur
-        </p>
-    </section>
+<section class="about">
+    <h2>हमारे बारे में</h2>
+    <p>APNA DIGITAL STUDIO में CSC एवं विभिन्न डिजिटल और ऑनलाइन सेवाओं की सुविधा उपलब्ध है।</p>
+    <p>📍 Pratappur Block Road, Pratappur</p>
+</section>
 
-    <h2 class="services-title">हमारी सेवाएँ</h2>
+<h2 class="services-title">हमारी सेवाएँ</h2>
 
-    <section class="services">
+<section class="services">
 
-        <div class="service">
-            <div class="icon">🪪</div>
-            <h3>Aadhaar Services</h3>
-            <p>Aadhaar से संबंधित ऑनलाइन सेवाएँ</p>
-        </div>
+<div class="service">
+    <div class="icon">🪪</div>
+    <h3>Aadhaar Services</h3>
+    <p>Aadhaar से संबंधित सेवाएँ</p>
+</div>
 
-        <div class="service">
-            <div class="icon">💳</div>
-            <h3>PAN Card</h3>
-            <p>PAN Card से संबंधित सेवाएँ</p>
-        </div>
+<div class="service">
+    <div class="icon">💳</div>
+    <h3>PAN Card</h3>
+    <p>PAN Card सेवाएँ</p>
+</div>
 
-        <div class="service">
-            <div class="icon">💻</div>
-            <h3>Online Form</h3>
-            <p>सरकारी एवं अन्य ऑनलाइन फॉर्म</p>
-        </div>
+<div class="service">
+    <div class="icon">💻</div>
+    <h3>Online Form</h3>
+    <p>ऑनलाइन फॉर्म भरने की सुविधा</p>
+</div>
 
-        <div class="service">
-            <div class="icon">🖨️</div>
-            <h3>Print & Scan</h3>
-            <p>Print, Scan एवं अन्य डिजिटल सेवाएँ</p>
-        </div>
+<div class="service">
+    <div class="icon">🖨️</div>
+    <h3>Print & Scan</h3>
+    <p>Print एवं Scan सुविधा</p>
+</div>
 
-        <div class="service">
-            <div class="icon">💰</div>
-            <h3>Bill Payment</h3>
-            <p>विभिन्न प्रकार के बिल भुगतान</p>
-        </div>
+<div class="service">
+    <div class="icon">💰</div>
+    <h3>Bill Payment</h3>
+    <p>बिल भुगतान की सुविधा</p>
+</div>
 
-        <div class="service">
-            <div class="icon">📱</div>
-            <h3>Recharge</h3>
-            <p>Mobile एवं अन्य Recharge सेवाएँ</p>
-        </div>
+<div class="service">
+    <div class="icon">📱</div>
+    <h3>Recharge</h3>
+    <p>Mobile Recharge सुविधा</p>
+</div>
 
-    </section>
+</section>
 
-    <section class="contact">
-        <h2>आज ही संपर्क करें</h2>
-        <p>APNA DIGITAL STUDIO</p>
-        <p>Pratappur Block Road, Pratappur</p>
-        <p>CSC VLE - Narendra Kumar</p>
-    </section>
+<section class="contact">
+    <h2>आज ही संपर्क करें</h2>
+    <p>APNA DIGITAL STUDIO</p>
+    <p>CSC VLE - Narendra Kumar</p>
+    <p>📍 Pratappur Block Road, Pratappur</p>
+</section>
 
 </div>
 
 <footer>
-    © 2026 APNA DIGITAL STUDIO | All Rights Reserved
+    © 2026 APNA DIGITAL STUDIO
 </footer>
 
 </body>
