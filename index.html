@@ -18,7 +18,6 @@ body {
     color: #222;
 }
 
-/* Header */
 header {
     background: linear-gradient(135deg, #005bea, #00c6fb);
     color: white;
@@ -36,51 +35,49 @@ header p {
     margin: 8px 0;
 }
 
-/* Main Container */
 .container {
     max-width: 1100px;
     margin: auto;
     padding: 30px 20px;
 }
 
-/* About */
-.about {
+.about,
+.service,
+.contact,
+.map-section {
     background: white;
-    padding: 28px;
     border-radius: 18px;
-    margin-bottom: 30px;
-    text-align: center;
     box-shadow: 0 5px 18px rgba(0,0,0,0.08);
 }
 
-.about h2 {
-    color: #005bea;
-    margin-top: 0;
+.about {
+    padding: 28px;
+    margin-bottom: 30px;
+    text-align: center;
 }
 
-/* Services Title */
+.about h2,
+.services-title,
+.map-section h2 {
+    color: #005bea;
+}
+
 .services-title {
     text-align: center;
-    color: #005bea;
     margin-bottom: 25px;
 }
 
-/* Services Grid */
 .services {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 22px;
 }
 
-/* Service Card */
 .service {
-    background: white;
     padding: 28px 20px;
-    border-radius: 18px;
     text-align: center;
     text-decoration: none;
     color: #222;
-    box-shadow: 0 5px 18px rgba(0,0,0,0.08);
     border: 2px solid transparent;
     transition: all 0.3s ease;
 }
@@ -107,13 +104,11 @@ header p {
     line-height: 1.5;
 }
 
-/* Contact */
 .contact {
     background: #005bea;
     color: white;
     text-align: center;
     padding: 30px 20px;
-    border-radius: 18px;
     margin-top: 35px;
 }
 
@@ -121,7 +116,27 @@ header p {
     margin-top: 0;
 }
 
-/* Buttons */
+.map-section {
+    padding: 25px;
+    margin-top: 25px;
+    text-align: center;
+}
+
+.map-section h2 {
+    margin-top: 0;
+}
+
+.map-section p {
+    margin-bottom: 20px;
+}
+
+.map-section iframe {
+    width: 100%;
+    height: 350px;
+    border: 0;
+    border-radius: 15px;
+}
+
 .buttons {
     text-align: center;
     padding: 30px 15px;
@@ -152,7 +167,6 @@ header p {
     transform: scale(1.05);
 }
 
-/* Footer */
 footer {
     background: #111;
     color: white;
@@ -160,7 +174,6 @@ footer {
     padding: 20px;
 }
 
-/* Mobile */
 @media (max-width: 600px) {
 
     header h1 {
@@ -182,227 +195,190 @@ footer {
     .service {
         padding: 25px 15px;
     }
+
+    .map-section iframe {
+        height: 300px;
+    }
 }
 </style>
 </head>
 
 <body>
 
-<!-- Header -->
 <header>
-
     <h1>APNA DIGITAL STUDIO</h1>
-
     <p>CSC VLE - Narendra Kumar</p>
-
     <p>आपकी सभी डिजिटल सेवाएँ एक ही जगह</p>
-
 </header>
 
 
-<!-- Main -->
 <div class="container">
 
-    <!-- About -->
-    <section class="about">
+<section class="about">
 
-        <h2>हमारे बारे में</h2>
+    <h2>हमारे बारे में</h2>
 
-        <p>
-            APNA DIGITAL STUDIO में CSC एवं विभिन्न डिजिटल
-            और ऑनलाइन सेवाओं की सुविधा उपलब्ध है।
-        </p>
+    <p>
+        APNA DIGITAL STUDIO में CSC एवं विभिन्न डिजिटल
+        और ऑनलाइन सेवाओं की सुविधा उपलब्ध है।
+    </p>
 
-        <p>
-            📍 Pratappur Block Road, Pratappur
-        </p>
+    <p>
+        📍 Pratappur Block Road, Pratappur
+    </p>
 
-    </section>
-
-
-    <!-- Services -->
-    <h2 class="services-title">
-        हमारी डिजिटल सेवाएँ
-    </h2>
+</section>
 
 
-    <section class="services">
-
-        <!-- Aadhaar -->
-        <a href="https://wa.me/917480949254?text=मुझे%20Aadhaar%20की%20सेवा%20चाहिए।"
-           target="_blank"
-           class="service">
-
-            <div class="icon">🪪</div>
-
-            <h3>Aadhaar Services</h3>
-
-            <p>
-                Aadhaar से संबंधित डिजिटल सेवाएँ
-            </p>
-
-        </a>
+<h2 class="services-title">
+    हमारी डिजिटल सेवाएँ
+</h2>
 
 
-        <!-- PAN -->
-        <a href="https://wa.me/917480949254?text=मुझे%20PAN%20Card%20की%20सेवा%20चाहिए।"
-           target="_blank"
-           class="service">
+<section class="services">
 
-            <div class="icon">💳</div>
+<a href="https://wa.me/917480949254?text=मुझे%20Aadhaar%20की%20सेवा%20चाहिए।"
+   target="_blank"
+   class="service">
 
-            <h3>PAN Card</h3>
+    <div class="icon">🪪</div>
+    <h3>Aadhaar Services</h3>
+    <p>Aadhaar से संबंधित डिजिटल सेवाएँ</p>
 
-            <p>
-                PAN Card आवेदन एवं संबंधित सेवाएँ
-            </p>
-
-        </a>
+</a>
 
 
-        <!-- Online Form -->
-        <a href="https://wa.me/917480949254?text=मुझे%20Online%20Form%20भरवाना%20है।"
-           target="_blank"
-           class="service">
+<a href="https://wa.me/917480949254?text=मुझे%20PAN%20Card%20की%20सेवा%20चाहिए।"
+   target="_blank"
+   class="service">
 
-            <div class="icon">📝</div>
+    <div class="icon">💳</div>
+    <h3>PAN Card</h3>
+    <p>PAN Card आवेदन एवं संबंधित सेवाएँ</p>
 
-            <h3>Online Form</h3>
-
-            <p>
-                सरकारी एवं अन्य ऑनलाइन फॉर्म
-            </p>
-
-        </a>
+</a>
 
 
-        <!-- Print Scan -->
-        <a href="https://wa.me/917480949254?text=मुझे%20Print%20और%20Scan%20की%20सेवा%20चाहिए।"
-           target="_blank"
-           class="service">
+<a href="https://wa.me/917480949254?text=मुझे%20Online%20Form%20भरवाना%20है।"
+   target="_blank"
+   class="service">
 
-            <div class="icon">🖨️</div>
+    <div class="icon">📝</div>
+    <h3>Online Form</h3>
+    <p>सरकारी एवं अन्य ऑनलाइन फॉर्म</p>
 
-            <h3>Print & Scan</h3>
-
-            <p>
-                Print, Scan एवं दस्तावेज़ सेवाएँ
-            </p>
-
-        </a>
+</a>
 
 
-        <!-- Bill Payment -->
-        <a href="https://wa.me/917480949254?text=मुझे%20Bill%20Payment%20की%20सेवा%20चाहिए।"
-           target="_blank"
-           class="service">
+<a href="https://wa.me/917480949254?text=मुझे%20Print%20और%20Scan%20की%20सेवा%20चाहिए।"
+   target="_blank"
+   class="service">
 
-            <div class="icon">💰</div>
+    <div class="icon">🖨️</div>
+    <h3>Print & Scan</h3>
+    <p>Print, Scan एवं दस्तावेज़ सेवाएँ</p>
 
-            <h3>Bill Payment</h3>
-
-            <p>
-                विभिन्न प्रकार के बिल भुगतान
-            </p>
-
-        </a>
+</a>
 
 
-        <!-- Money Transfer -->
-        <a href="https://wa.me/917480949254?text=मुझे%20Money%20Transfer%20की%20सेवा%20चाहिए।"
-           target="_blank"
-           class="service">
+<a href="https://wa.me/917480949254?text=मुझे%20Bill%20Payment%20की%20सेवा%20चाहिए।"
+   target="_blank"
+   class="service">
 
-            <div class="icon">💸</div>
+    <div class="icon">💰</div>
+    <h3>Bill Payment</h3>
+    <p>विभिन्न प्रकार के बिल भुगतान</p>
 
-            <h3>Money Transfer</h3>
-
-            <p>
-                मनी ट्रांसफर की सुविधा
-            </p>
-
-        </a>
+</a>
 
 
-        <!-- Mobile Recharge -->
-        <a href="https://wa.me/917480949254?text=मुझे%20Mobile%20और%20DTH%20Recharge%20करवाना%20है।"
-           target="_blank"
-           class="service">
+<a href="https://wa.me/917480949254?text=मुझे%20Money%20Transfer%20की%20सेवा%20चाहिए।"
+   target="_blank"
+   class="service">
 
-            <div class="icon">📱</div>
+    <div class="icon">💸</div>
+    <h3>Money Transfer</h3>
+    <p>मनी ट्रांसफर की सुविधा</p>
 
-            <h3>Mobile Recharge</h3>
-
-            <p>
-                Mobile एवं DTH Recharge
-            </p>
-
-        </a>
+</a>
 
 
-        <!-- Government Services -->
-        <a href="https://wa.me/917480949254?text=मुझे%20Government%20Services%20की%20जानकारी%20चाहिए।"
-           target="_blank"
-           class="service">
+<a href="https://wa.me/917480949254?text=मुझे%20Mobile%20और%20DTH%20Recharge%20करवाना%20है।"
+   target="_blank"
+   class="service">
 
-            <div class="icon">🏛️</div>
+    <div class="icon">📱</div>
+    <h3>Mobile Recharge</h3>
+    <p>Mobile एवं DTH Recharge</p>
 
-            <h3>Government Services</h3>
-
-            <p>
-                सरकारी योजनाओं से संबंधित ऑनलाइन सेवाएँ
-            </p>
-
-        </a>
-
-    </section>
+</a>
 
 
-    <!-- Contact -->
-    <section class="contact">
+<a href="https://wa.me/917480949254?text=मुझे%20Government%20Services%20की%20जानकारी%20चाहिए।"
+   target="_blank"
+   class="service">
 
-        <h2>आज ही संपर्क करें</h2>
+    <div class="icon">🏛️</div>
+    <h3>Government Services</h3>
+    <p>सरकारी योजनाओं से संबंधित ऑनलाइन सेवाएँ</p>
 
-        <p>APNA DIGITAL STUDIO</p>
+</a>
 
-        <p>CSC VLE - Narendra Kumar</p>
+</section>
 
-        <p>
-            📍 Pratappur Block Road, Pratappur
-        </p>
 
-    </section>
+<section class="contact">
+
+    <h2>आज ही संपर्क करें</h2>
+
+    <p>APNA DIGITAL STUDIO</p>
+
+    <p>CSC VLE - Narendra Kumar</p>
+
+    <p>📍 Pratappur Block Road, Pratappur</p>
+
+</section>
+
+
+<!-- Google Map -->
+
+<section class="map-section">
+
+    <h2>📍 हमारा स्थान</h2>
+
+    <p>
+        APNA DIGITAL STUDIO, Pratappur Block Road, Pratappur
+    </p>
+
+    <iframe
+        src="https://www.google.com/maps?q=Pratappur%20Block%20Road%2C%20Pratappur%2C%20Jharkhand&output=embed"
+        allowfullscreen=""
+        loading="lazy">
+    </iframe>
+
+</section>
 
 </div>
 
 
-<!-- Buttons -->
 <div class="buttons">
 
     <a href="tel:7480949254"
        class="btn call-btn">
-
-        📞 Call Now
-
+       📞 Call Now
     </a>
-
 
     <a href="https://wa.me/917480949254"
        target="_blank"
        class="btn whatsapp-btn">
-
-        💬 WhatsApp
-
+       💬 WhatsApp
     </a>
 
 </div>
 
 
-<!-- Footer -->
 <footer>
-
     © 2026 APNA DIGITAL STUDIO
-
 </footer>
 
 </body>
