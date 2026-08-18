@@ -61,6 +61,14 @@ header h1 {
 
 .service {
     text-align: center;
+    text-decoration: none;
+    color: #222;
+    display: block;
+    transition: 0.3s;
+}
+
+.service:hover {
+    transform: translateY(-5px);
 }
 
 .icon {
@@ -95,17 +103,21 @@ footer {
 </header>
 
 <div class="container">
- <h2>हमारे बारे में</h2>
+
+<section class="about">
+    <h2>हमारे बारे में</h2>
     <p>APNA DIGITAL STUDIO में CSC एवं विभिन्न डिजिटल और ऑनलाइन सेवाओं की सुविधा उपलब्ध है।</p>
     <p>📍 Pratappur Block Road, Pratappur</p>
-<section class="about">
-   
 </section>
+
 <h2 class="services-title">हमारी डिजिटल सेवाएँ</h2>
 
 <section class="services">
 
-<a href="https://wa.me/917480949254?text=मुझे%20Aadhaar%20की%20सेवा%20चाहिए।" target="_blank" class="service">
+<!-- Aadhaar -->
+<a href="https://wa.me/917480949254?text=मुझे%20Aadhaar%20की%20सेवा%20चाहिए।"
+   target="_blank"
+   class="service">
 
     <div class="icon">🪪</div>
     <h3>Aadhaar Services</h3>
@@ -113,49 +125,82 @@ footer {
 
 </a>
 
-<div class="service">
+<!-- PAN Card -->
+<a href="https://wa.me/917480949254?text=मुझे%20PAN%20Card%20की%20सेवा%20चाहिए।"
+   target="_blank"
+   class="service">
+
     <div class="icon">💳</div>
     <h3>PAN Card</h3>
     <p>PAN Card आवेदन एवं संबंधित सेवाएँ</p>
-</div>
 
-<div class="service">
+</a>
+
+<!-- Online Form -->
+<a href="https://wa.me/917480949254?text=मुझे%20Online%20Form%20भरवाना%20है।"
+   target="_blank"
+   class="service">
+
     <div class="icon">📝</div>
     <h3>Online Form</h3>
     <p>सरकारी एवं अन्य ऑनलाइन फॉर्म</p>
-</div>
 
-<div class="service">
+</a>
+
+<!-- Print & Scan -->
+<a href="https://wa.me/917480949254?text=मुझे%20Print%20और%20Scan%20की%20सेवा%20चाहिए।"
+   target="_blank"
+   class="service">
+
     <div class="icon">🖨️</div>
     <h3>Print & Scan</h3>
     <p>Print, Scan एवं दस्तावेज़ सेवाएँ</p>
-</div>
 
-<div class="service">
+</a>
+
+<!-- Bill Payment -->
+<a href="https://wa.me/917480949254?text=मुझे%20Bill%20Payment%20की%20सेवा%20चाहिए।"
+   target="_blank"
+   class="service">
+
     <div class="icon">💰</div>
     <h3>Bill Payment</h3>
     <p>विभिन्न प्रकार के बिल भुगतान</p>
-</div>
 
-<div class="service">
+</a>
+
+<!-- Money Transfer -->
+<a href="https://wa.me/917480949254?text=मुझे%20Money%20Transfer%20की%20सेवा%20चाहिए।"
+   target="_blank"
+   class="service">
+
     <div class="icon">💸</div>
     <h3>Money Transfer</h3>
     <p>मनी ट्रांसफर की सुविधा</p>
-</div>
 
-<div class="service">
+</a>
+
+<!-- Mobile Recharge -->
+<a href="https://wa.me/917480949254?text=मुझे%20Mobile%20और%20DTH%20Recharge%20करवाना%20है।"
+   target="_blank"
+   class="service">
+
     <div class="icon">📱</div>
     <h3>Mobile Recharge</h3>
     <p>Mobile एवं DTH Recharge</p>
-</div>
 
-<div class="service">
+</a>
+
+<!-- Government Services -->
+<a href="https://wa.me/917480949254?text=मुझे%20Government%20Services%20की%20जानकारी%20चाहिए।"
+   target="_blank"
+   class="service">
+
     <div class="icon">🏛️</div>
     <h3>Government Services</h3>
     <p>सरकारी योजनाओं से संबंधित ऑनलाइन सेवाएँ</p>
-</div>
 
-</section>
+</a>
 
 </section>
 
@@ -171,7 +216,9 @@ footer {
 <footer>
     © 2026 APNA DIGITAL STUDIO
 </footer>
+
 <div style="text-align:center;padding:30px;background:white;">
+
     <a href="tel:7480949254"
        style="display:inline-block;background:#0d6efd;color:white;padding:15px 25px;
               text-decoration:none;border-radius:8px;margin:10px;font-size:18px;">
@@ -184,6 +231,8 @@ footer {
               text-decoration:none;border-radius:8px;margin:10px;font-size:18px;">
        💬 WhatsApp
     </a>
+
 </div>
+
 </body>
 </html>
