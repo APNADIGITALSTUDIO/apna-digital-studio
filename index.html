@@ -113,10 +113,12 @@
     .service-card {
       background:#fff; border:1px solid #e7edf5; padding:25px; border-radius:20px; transition:.3s;
       box-shadow: 0 8px 25px rgba(23,42,70,.05);
+      cursor: pointer;
     }
     .service-card:hover {
       transform: translateY(-7px); box-shadow:0 15px 35px rgba(23,42,70,.12); border-color:#8dc8ff;
     }
+    .service-card:focus { outline: 3px solid rgba(8,117,225,0.12); transform: translateY(-7px); }
     .service-icon {
       width:52px; height:52px; display:flex; align-items:center; justify-content:center;
       background:#e9f4ff; color:#0875e1; border-radius:15px; font-size:24px; margin-bottom:17px;
@@ -278,37 +280,37 @@
       </div>
 
       <div class="service-grid">
-        <div class="service-card">
+        <div class="service-card" role="button" tabindex="0" aria-label="आधार संबंधित सेवाएँ के लिए WhatsApp खोलें" data-service="आधार संबंधित सेवाएँ">
           <div class="service-icon">🪪</div>
           <h3>आधार संबंधित सेवाएँ</h3>
           <p>आधार से संबंधित उपलब्ध डिजिटल सुविधाओं में सहायता।</p>
         </div>
 
-        <div class="service-card">
+        <div class="service-card" role="button" tabindex="0" aria-label="PAN Card के लिए WhatsApp खोलें" data-service="PAN Card">
           <div class="service-icon">💳</div>
           <h3>PAN Card</h3>
           <p>PAN Card आवेदन एवं संबंधित ऑनलाइन कार्यों में सहायता।</p>
         </div>
 
-        <div class="service-card">
+        <div class="service-card" role="button" tabindex="0" aria-label="Online Forms के लिए WhatsApp खोलें" data-service="Online Forms">
           <div class="service-icon">📄</div>
           <h3>Online Forms</h3>
           <p>विभिन्न सरकारी एवं ऑनलाइन फॉर्म भरने की सुविधा।</p>
         </div>
 
-        <div class="service-card">
+        <div class="service-card" role="button" tabindex="0" aria-label="Print & Scan के लिए WhatsApp खोलें" data-service="Print & Scan">
           <div class="service-icon">🖨️</div>
           <h3>Print & Scan</h3>
           <p>Print, Scan और Document संबंधित सुविधाएँ।</p>
         </div>
 
-        <div class="service-card">
+        <div class="service-card" role="button" tabindex="0" aria-label="Online Services के लिए WhatsApp खोलें" data-service="Online Services">
           <div class="service-icon">💻</div>
           <h3>Online Services</h3>
           <p>विभिन्न ऑनलाइन सेवाओं के लिए डिजिटल सहायता।</p>
         </div>
 
-        <div class="service-card">
+        <div class="service-card" role="button" tabindex="0" aria-label="Banking Services के लिए WhatsApp खोलें" data-service="Banking Services">
           <div class="service-icon">🏦</div>
           <h3>Banking Services</h3>
           <p>उपलब्ध बैंकिंग एवं डिजिटल भुगतान सेवाओं में सहायता।</p>
@@ -420,7 +422,7 @@
 
   <!-- JAVASCRIPT -->
   <script>
-    // Toggle menu with aria-expanded
+    // Menu toggle (unchanged)
     function toggleMenu() {
       const menu = document.getElementById("menu");
       const btn = document.querySelector(".menu-btn");
@@ -438,7 +440,6 @@
       if (btn) btn.setAttribute("aria-expanded", "false");
     }
 
-    // Close menu when clicking outside or pressing Escape
     document.addEventListener('click', function(e) {
       const menu = document.getElementById('menu');
       const btn = document.querySelector('.menu-btn');
@@ -452,7 +453,7 @@
       if (e.key === 'Escape') closeMenu();
     });
 
-    // sendWhatsApp: validate and open wa.me with encoded text
+    // sendWhatsApp from form
     function sendWhatsApp(event) {
       event.preventDefault();
 
@@ -484,10 +485,49 @@
 
       const url = "https://wa.me/" + whatsappNumber + "?text=" + encodeURIComponent(plainText);
 
-      // Open safely
       const win = window.open(url, "_blank");
       if (win) { win.opener = null; }
     }
+
+    // --- New: open WhatsApp when a service card is clicked (with keyboard support) ---
+    (function () {
+      const whatsappNumber = "917480949254";
+
+      function openWhatsAppForService(serviceName) {
+        if (!serviceName) serviceName = "सेवा";
+        const prefilled =
+          "नमस्ते Apna Digital Studio,\n\n" +
+          "मैं \"" + serviceName + "\" सेवा के बारे में जानकारी चाहता/चाहती हूँ।\n\n" +
+          "नाम: \n" +
+          "मोबाइल: \n\n" +
+          "कृपया सहायता करें।";
+        const url = "https://wa.me/" + whatsappNumber + "?text=" + encodeURIComponent(prefilled);
+        const win = window.open(url, "_blank");
+        if (win) { win.opener = null; }
+      }
+
+      // Attach handlers to all service cards
+      document.addEventListener('DOMContentLoaded', function () {
+        const cards = document.querySelectorAll('.service-card');
+        cards.forEach(card => {
+          // Determine service name from data attribute or fallback to heading text
+          const serviceName = card.getAttribute('data-service') || (card.querySelector('h3') ? card.querySelector('h3').textContent.trim() : '');
+
+          // Click
+          card.addEventListener('click', function () {
+            openWhatsAppForService(serviceName);
+          });
+
+          // Keyboard support: Enter and Space open WhatsApp
+          card.addEventListener('keydown', function (e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+              e.preventDefault();
+              openWhatsAppForService(serviceName);
+            }
+          });
+        });
+      });
+    })();
   </script>
 </body>
 </html>
