@@ -6,6 +6,7 @@
     <title>APNA DIGITAL STUDIO - CSC VLE Narendra Kumar | Digital Services</title>
     <meta name="description" content="APNA DIGITAL STUDIO - आपकी सभी डिजिटल सेवाएँ एक ही जगह। Aadhaar, PAN, Online Forms, Bill Payment और भी बहुत कुछ।">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <meta name="theme-color" content="#005bea">
     <style>
         * {
             margin: 0;
@@ -98,6 +99,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            position: relative;
         }
 
         .nav-menu {
@@ -116,6 +118,38 @@
         .nav-menu a:hover {
             color: #ffd700;
         }
+
+        /* Hamburger (hidden on desktop) */
+        .nav-toggle {
+          display: none;
+          background: transparent;
+          border: none;
+          cursor: pointer;
+          width: 48px;
+          height: 48px;
+          align-items: center;
+          justify-content: center;
+        }
+        .nav-toggle .hamburger {
+          display: block;
+          width: 24px;
+          height: 2px;
+          background: #fff;
+          position: relative;
+          transition: all 0.25s ease;
+        }
+        .nav-toggle .hamburger::before,
+        .nav-toggle .hamburger::after {
+          content: "";
+          position: absolute;
+          left: 0;
+          width: 24px;
+          height: 2px;
+          background: #fff;
+          transition: all 0.25s ease;
+        }
+        .nav-toggle .hamburger::before { top: -7px; }
+        .nav-toggle .hamburger::after { top: 7px; }
 
         /* Hero Section */
         .hero {
@@ -813,72 +847,67 @@
             color: #999;
         }
 
-        /* Responsive */
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2rem;
-            }
+        /* Responsive: mobile improvements and grid breakpoints */
+        @media (max-width: 880px) {
+          .navbar .container { gap: 1rem; }
+          .nav-menu {
+            position: absolute;
+            top: 64px; /* navbar height */
+            right: 16px;
+            background: linear-gradient(135deg,#005bea,#0052cc);
+            padding: 1rem;
+            border-radius: 8px;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 0.8rem;
+            width: calc(100% - 32px);
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.28s ease;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+            display: flex;
+          }
+          .nav-menu.open {
+            max-height: 500px; /* enough to show items */
+          }
+          .nav-menu a { padding: 0.6rem 0.4rem; width: 100%; }
 
-            .nav-menu {
-                gap: 1rem;
-                font-size: 0.9rem;
-            }
+          .nav-toggle { display: inline-flex; }
 
-            .about-content,
-            .contact-wrapper {
-                grid-template-columns: 1fr;
-            }
+          /* logo text smaller */
+          .logo-text-main { font-size: 1rem; }
+          .logo-text-sub { font-size: 0.6rem; }
 
-            .about-stats {
-                grid-template-columns: 1fr;
-            }
+          /* hero adjustments */
+          .hero { padding: 40px 16px; }
+          .hero h1 { font-size: 1.6rem; }
+          .tagline { font-size: 1.05rem; }
 
-            .hero-buttons,
-            .cta-buttons {
-                flex-direction: column;
-            }
+          /* services grid: make cards narrower and stack on very small */
+          .services-grid {
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1rem;
+          }
+          .service-card {
+            padding: 1rem;
+          }
+          .service-icon { font-size: 2.2rem; }
 
-            .section-title {
-                font-size: 2rem;
-            }
+          /* make hero buttons full width */
+          .hero-buttons .btn { width: 100%; display: block; text-align: center; }
 
-            .hero-logo {
-                flex-direction: column;
-            }
-
-            .logo-icon svg { width: 40px; height: 40px; }
-            .hero-logo-icon svg { width: 56px; height: 56px; }
+          /* contact wrapper stack */
+          .contact-wrapper { gap: 1.5rem; grid-template-columns: 1fr; }
         }
 
-        @media (max-width: 480px) {
-            .hero h1 {
-                font-size: 1.5rem;
-            }
-
-            .hero-buttons,
-            .cta-buttons {
-                flex-direction: column;
-            }
-
-            .nav-menu {
-                flex-direction: column;
-                gap: 0.5rem;
-            }
-
-            .faq-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .logo-text-main {
-                font-size: 1rem;
-            }
-
-            .logo-text-sub {
-                font-size: 0.6rem;
-            }
-
-            .logo-icon svg { width: 34px; height: 34px; }
-            .hero-logo-icon svg { width: 48px; height: 48px; }
+        /* Extra small phones */
+        @media (max-width: 420px) {
+          .services-grid { grid-template-columns: 1fr; }
+          .hero-logo { padding: 0.6rem 1rem; }
+          .hero-logo-text h2 { font-size: 1.1rem; }
+          .hero-logo-icon svg { width: 44px; height: 44px; }
+          .logo-icon svg { width: 30px; height: 30px; }
+          .nav-menu { top: 56px; right: 8px; width: calc(100% - 16px); }
         }
     </style>
 </head>
@@ -906,6 +935,12 @@
                 <div class="logo-text-sub">Digital Studio</div>
             </div>
         </a>
+
+        <!-- Hamburger toggle for mobile -->
+        <button class="nav-toggle" aria-label="मेन्यू खोलें" aria-expanded="false">
+          <span class="hamburger"></span>
+        </button>
+
         <ul class="nav-menu">
             <li><a href="#home">Home</a></li>
             <li><a href="#services">Services</a></li>
@@ -1015,7 +1050,7 @@
         <p class="section-subtitle">सभी आवश्यक digital सेवाएँ एक ही छत के नीचे</p>
         
         <div class="services-grid">
-            <!-- existing cards (kept) -->
+            <!-- existing and newly added service cards (kept as before) -->
             <div class="service-card">
                 <div class="service-icon">🪪</div>
                 <h3>Aadhaar Services</h3>
@@ -1331,7 +1366,7 @@
                 <ul class="service-features">
                     <li>✓ मोबाइल से DL विवरण</li>
                     <li>✓ खोज और वेरिफिकेशन</li>
-                    <li>✓ तेज़ रिजल्ट</li>
+                    <li>✓ तेज़ रिज़ल्ट</li>
                 </ul>
                 <a href="https://wa.me/917480949254?text=मुझे%20Mobile%20No%20to%20DL%20Details%20चाहिए।" target="_blank" rel="noopener noreferrer" class="service-link">अधिक जानें →</a>
             </div>
@@ -1795,50 +1830,113 @@
 </footer>
 
 <script>
-// Smooth scrolling
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({ behavior: 'smooth' });
-        }
+/* NAV TOGGLE + other UI scripts */
+document.addEventListener('DOMContentLoaded', function() {
+  // NAV TOGGLE
+  const navToggle = document.querySelector('.nav-toggle');
+  const navMenu = document.querySelector('.nav-menu');
+  if (navToggle && navMenu) {
+    navToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const open = navMenu.classList.toggle('open');
+      navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      // simple visual toggle (transform lines)
+      const ham = navToggle.querySelector('.hamburger');
+      if (open) {
+        ham.style.background = 'transparent';
+        ham.style.boxShadow = 'none';
+        ham.style.position = 'relative';
+        ham.style.borderTop = '2px solid #fff';
+        ham.style.borderBottom = '2px solid #fff';
+        ham.style.height = '0';
+      } else {
+        ham.style.background = '';
+        ham.style.borderTop = '';
+        ham.style.borderBottom = '';
+        ham.style.height = '';
+      }
     });
-});
 
-// FAQ Toggle
-document.querySelectorAll('.faq-header').forEach(header => {
-    header.addEventListener('click', () => {
-        const faqItem = header.parentElement;
-        faqItem.classList.toggle('active');
+    // close nav on click outside
+    document.addEventListener('click', (e) => {
+      if (!navMenu.contains(e.target) && !navToggle.contains(e.target) && navMenu.classList.contains('open')) {
+        navMenu.classList.remove('open');
+        navToggle.setAttribute('aria-expanded', 'false');
+      }
     });
-});
 
-// Contact Form (client-only feedback)
-const contactForm = document.getElementById('contactForm');
-if (contactForm) {
-    contactForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        const name = document.getElementById('name').value;
-        const email = document.getElementById('email').value;
-        const phone = document.getElementById('phone').value;
-        const service = document.getElementById('service').value;
-        const message = document.getElementById('message').value;
-        
-        if (name && email && phone && service && message) {
-            const formMessage = document.getElementById('formMessage');
-            formMessage.textContent = 'धन्यवाद! आपका संदेश भेज दिया गया है। हम जल्दी आपसे संपर्क करेंगे।';
-            formMessage.className = 'form-message success';
-            contactForm.reset();
-            
-            setTimeout(() => {
-                formMessage.className = '';
-                formMessage.textContent = '';
-            }, 5000);
-        }
+    // close on ESC
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && navMenu.classList.contains('open')) {
+        navMenu.classList.remove('open');
+        navToggle.setAttribute('aria-expanded', 'false');
+      }
     });
-}
+  }
+
+  // Smooth scrolling for internal anchors
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+          // if nav menu open on mobile, close it after clicking a link
+          if (navMenu && navMenu.classList.contains('open')) {
+            navMenu.classList.remove('open');
+            if (navToggle) navToggle.setAttribute('aria-expanded', 'false');
+          }
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute('href'));
+          if (target) {
+              target.scrollIntoView({ behavior: 'smooth' });
+          }
+      });
+  });
+
+  // FAQ Toggle
+  document.querySelectorAll('.faq-header').forEach(header => {
+      header.addEventListener('click', () => {
+          const faqItem = header.parentElement;
+          faqItem.classList.toggle('active');
+      });
+  });
+
+  // Contact Form (client-only feedback)
+  const contactForm = document.getElementById('contactForm');
+  if (contactForm) {
+      contactForm.addEventListener('submit', function(e) {
+          e.preventDefault();
+          
+          const name = document.getElementById('name').value;
+          const email = document.getElementById('email').value;
+          const phone = document.getElementById('phone').value;
+          const service = document.getElementById('service').value;
+          const message = document.getElementById('message').value;
+          
+          if (name && email && phone && service && message) {
+              const formMessage = document.getElementById('formMessage');
+              formMessage.textContent = 'धन्यवाद! आपका संदेश भेज दिया गया है। हम जल्दी आपसे संपर्क करेंगे।';
+              formMessage.className = 'form-message success';
+              contactForm.reset();
+              
+              setTimeout(() => {
+                  formMessage.className = '';
+                  formMessage.textContent = '';
+              }, 5000);
+          }
+      });
+  }
+
+  // Adjust hero buttons on resize for mobile
+  function adjustHeroButtons() {
+    const heroButtons = document.querySelector('.hero-buttons');
+    if (!heroButtons) return;
+    if (window.innerWidth <= 880) {
+      heroButtons.style.flexDirection = 'column';
+    } else {
+      heroButtons.style.flexDirection = '';
+    }
+  }
+  adjustHeroButtons();
+  window.addEventListener('resize', adjustHeroButtons);
+});
 </script>
 </body>
 </html>
