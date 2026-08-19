@@ -1,719 +1,219 @@
 <!DOCTYPE html>
 <html lang="hi">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Apna Digital Studio | CSC VLE - Narendra Kumar</title>
-
   <meta name="description" content="Apna Digital Studio - सभी डिजिटल सेवाएं एक ही जगह पर। CSC VLE - Narendra Kumar">
 
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { max-width: 100%; overflow-x: hidden; scroll-behavior: smooth; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
     body {
       font-family: Arial, Helvetica, sans-serif;
       background: #f4f7fb;
       color: #172033;
-      overflow-x: hidden;
     }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
+    a { text-decoration: none; color: inherit; }
 
     /* HEADER */
-
     header {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      background: rgba(5, 43, 105, 0.97);
+      position: sticky; top: 0; z-index: 1000;
+      background: rgba(5,43,105,0.97);
       backdrop-filter: blur(12px);
       box-shadow: 0 4px 20px rgba(0,0,0,0.15);
     }
-
     .nav {
-      max-width: 1150px;
-      margin: auto;
-      padding: 13px 20px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+      max-width: 1150px; margin: auto; padding: 13px 20px;
+      display: flex; align-items: center; justify-content: space-between;
     }
-
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 11px;
-      color: white;
-    }
-
+    .logo { display: flex; align-items: center; gap: 11px; color: white; }
     .logo-icon {
-      width: 45px;
-      height: 45px;
-      border-radius: 13px;
+      width: 45px; height: 45px; border-radius: 13px;
       background: linear-gradient(135deg, #1976ff, #18d6ff);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 22px;
-      font-weight: bold;
+      display:flex; align-items:center; justify-content:center;
+      font-size: 22px; font-weight: bold;
       box-shadow: 0 5px 18px rgba(0,170,255,0.3);
     }
+    .logo-text h2 { font-size: 18px; letter-spacing: .4px; }
+    .logo-text span { display:block; font-size: 10px; color: #b9d8ff; letter-spacing:2px; margin-top:3px; }
 
-    .logo-text h2 {
-      font-size: 18px;
-      letter-spacing: .4px;
-    }
-
-    .logo-text span {
-      display: block;
-      font-size: 10px;
-      color: #b9d8ff;
-      letter-spacing: 2px;
-      margin-top: 3px;
-    }
-
-    nav {
-      display: flex;
-      gap: 5px;
-    }
-
-    nav a {
-      color: white;
-      padding: 10px 14px;
-      border-radius: 10px;
-      font-size: 14px;
-    }
-
-    nav a:hover {
-      background: rgba(255,255,255,.15);
-    }
+    nav { display:flex; gap:5px; }
+    nav a { color: white; padding: 10px 14px; border-radius: 10px; font-size: 14px; }
+    nav a:hover { background: rgba(255,255,255,.15); }
 
     .menu-btn {
-      display: none;
-      color: white;
-      font-size: 30px;
-      cursor: pointer;
+      display: none; color: white; font-size: 30px; cursor: pointer;
     }
 
     /* HERO */
-
     .hero {
-      min-height: 650px;
-      display: flex;
-      align-items: center;
-      position: relative;
-      overflow: hidden;
+      min-height: 650px; display:flex; align-items:center; position:relative;
+      overflow:hidden;
       background:
         radial-gradient(circle at 10% 15%, rgba(255,255,255,.16), transparent 25%),
         radial-gradient(circle at 90% 80%, rgba(0,255,255,.16), transparent 30%),
         linear-gradient(135deg, #063b9c, #0878e8 55%, #10cce0);
     }
-
     .hero-container {
-      width: 100%;
-      max-width: 1150px;
-      margin: auto;
-      padding: 65px 20px;
-      display: grid;
-      grid-template-columns: 1.15fr .85fr;
-      gap: 45px;
-      align-items: center;
-      position: relative;
-      z-index: 2;
+      width:100%; max-width:1150px; margin:auto;
+      padding: 65px 20px; display:grid; grid-template-columns: 1.15fr .85fr;
+      gap:45px; align-items:center; position:relative; z-index:2;
     }
-
-    .hero-content {
-      color: white;
-    }
-
+    .hero-content { color: white; }
     .badge {
-      display: inline-block;
-      background: rgba(255,255,255,.14);
-      border: 1px solid rgba(255,255,255,.25);
-      padding: 9px 15px;
-      border-radius: 50px;
-      font-size: 13px;
-      margin-bottom: 20px;
+      display:inline-block; background: rgba(255,255,255,.14);
+      border:1px solid rgba(255,255,255,.25); padding:9px 15px; border-radius:50px;
+      font-size:13px; margin-bottom:20px;
     }
-
-    .hero h1 {
-      font-size: clamp(38px, 5vw, 64px);
-      line-height: 1.08;
-      margin-bottom: 18px;
-    }
-
-    .hero h1 span {
-      color: #bffaff;
-    }
-
-    .hero p {
-      font-size: 18px;
-      line-height: 1.7;
-      color: #e5f4ff;
-      max-width: 650px;
-      margin-bottom: 28px;
-    }
-
-    .hero-buttons {
-      display: flex;
-      gap: 14px;
-      flex-wrap: wrap;
-    }
-
+    .hero h1 { font-size: clamp(38px, 5vw, 64px); line-height:1.08; margin-bottom:18px; }
+    .hero h1 span { color: #bffaff; }
+    .hero p { font-size:18px; line-height:1.7; color:#e5f4ff; max-width:650px; margin-bottom:28px; }
+    .hero-buttons { display:flex; gap:14px; flex-wrap:wrap; }
     .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 9px;
-      padding: 14px 24px;
-      border-radius: 13px;
-      font-weight: bold;
-      border: none;
-      cursor: pointer;
-      font-size: 15px;
-      transition: .3s;
+      display:inline-flex; align-items:center; justify-content:center; gap:9px;
+      padding:14px 24px; border-radius:13px; font-weight:bold; border:none; cursor:pointer;
+      font-size:15px; transition:.3s;
     }
-
-    .btn:hover {
-      transform: translateY(-3px);
-    }
-
-    .btn-primary {
-      background: white;
-      color: #0861c9;
-      box-shadow: 0 10px 25px rgba(0,0,0,.15);
-    }
-
-    .btn-whatsapp {
-      background: #20d66b;
-      color: white;
-      box-shadow: 0 10px 25px rgba(0,0,0,.12);
-    }
+    .btn:hover { transform: translateY(-3px); }
+    .btn-primary { background: white; color: #0861c9; box-shadow: 0 10px 25px rgba(0,0,0,.15); }
+    .btn-whatsapp { background: #20d66b; color: white; box-shadow: 0 10px 25px rgba(0,0,0,.12); }
 
     /* STUDIO CARD */
-
     .studio-card {
-      background: rgba(255,255,255,.12);
-      border: 1px solid rgba(255,255,255,.25);
-      backdrop-filter: blur(16px);
-      padding: 30px;
-      border-radius: 28px;
-      color: white;
+      background: rgba(255,255,255,.12); border:1px solid rgba(255,255,255,.25);
+      backdrop-filter: blur(16px); padding:30px; border-radius:28px; color:white;
       box-shadow: 0 20px 50px rgba(0,0,0,.15);
     }
-
     .studio-icon {
-      width: 75px;
-      height: 75px;
-      border-radius: 20px;
+      width:75px; height:75px; border-radius:20px;
       background: linear-gradient(135deg,#1477ff,#17d4ff);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 35px;
-      margin-bottom: 22px;
+      display:flex; align-items:center; justify-content:center; font-size:35px; margin-bottom:22px;
     }
-
-    .studio-card h2 {
-      font-size: 28px;
-      margin-bottom: 8px;
-    }
-
-    .studio-card p {
-      font-size: 16px;
-      color: #dceeff;
-      margin-bottom: 18px;
-    }
-
+    .studio-card h2 { font-size:28px; margin-bottom:8px; }
+    .studio-card p { font-size:16px; color:#dceeff; margin-bottom:18px; }
     .status {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: rgba(0,0,0,.15);
-      padding: 9px 13px;
-      border-radius: 30px;
-      font-size: 13px;
+      display:inline-flex; align-items:center; gap:8px; background: rgba(0,0,0,.15);
+      padding:9px 13px; border-radius:30px; font-size:13px;
     }
-
-    .green-dot {
-      width: 9px;
-      height: 9px;
-      background: #39f27c;
-      border-radius: 50%;
-      box-shadow: 0 0 10px #39f27c;
-    }
+    .green-dot { width:9px; height:9px; background:#39f27c; border-radius:50%; box-shadow:0 0 10px #39f27c; }
 
     /* SECTION */
+    section { padding:75px 20px; }
+    .container { max-width:1150px; margin:auto; }
 
-    section {
-      padding: 75px 20px;
-    }
-
-    .container {
-      max-width: 1150px;
-      margin: auto;
-    }
-
-    .section-title {
-      text-align: center;
-      margin-bottom: 45px;
-    }
-
-    .section-title span {
-      color: #0875e1;
-      font-weight: bold;
-      font-size: 13px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-    }
-
-    .section-title h2 {
-      font-size: 36px;
-      margin: 10px 0;
-    }
-
-    .section-title p {
-      color: #667085;
-      max-width: 650px;
-      margin: auto;
-      line-height: 1.6;
-    }
+    .section-title { text-align:center; margin-bottom:45px; }
+    .section-title span { color:#0875e1; font-weight:bold; font-size:13px; letter-spacing:2px; text-transform:uppercase; }
+    .section-title h2 { font-size:36px; margin:10px 0; }
+    .section-title p { color:#667085; max-width:650px; margin:auto; line-height:1.6; }
 
     /* SERVICES */
-
-    .services {
-      background: #fff;
-    }
-
-    .service-grid {
-      display: grid;
-      grid-template-columns: repeat(3,1fr);
-      gap: 20px;
-    }
-
+    .services { background: #fff; }
+    .service-grid { display:grid; grid-template-columns: repeat(3,1fr); gap:20px; }
     .service-card {
-      background: #fff;
-      border: 1px solid #e7edf5;
-      padding: 25px;
-      border-radius: 20px;
-      transition: .3s;
+      background:#fff; border:1px solid #e7edf5; padding:25px; border-radius:20px; transition:.3s;
       box-shadow: 0 8px 25px rgba(23,42,70,.05);
     }
-
     .service-card:hover {
-      transform: translateY(-7px);
-      box-shadow: 0 15px 35px rgba(23,42,70,.12);
-      border-color: #8dc8ff;
+      transform: translateY(-7px); box-shadow:0 15px 35px rgba(23,42,70,.12); border-color:#8dc8ff;
     }
-
     .service-icon {
-      width: 52px;
-      height: 52px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: #e9f4ff;
-      color: #0875e1;
-      border-radius: 15px;
-      font-size: 24px;
-      margin-bottom: 17px;
+      width:52px; height:52px; display:flex; align-items:center; justify-content:center;
+      background:#e9f4ff; color:#0875e1; border-radius:15px; font-size:24px; margin-bottom:17px;
     }
-
-    .service-card h3 {
-      margin-bottom: 9px;
-      font-size: 18px;
-    }
-
-    .service-card p {
-      color: #687386;
-      font-size: 14px;
-      line-height: 1.6;
-    }
+    .service-card h3 { margin-bottom:9px; font-size:18px; }
+    .service-card p { color:#687386; font-size:14px; line-height:1.6; }
 
     /* WHY */
-
-    .why {
-      background: #f5f9ff;
-    }
-
-    .why-grid {
-      display: grid;
-      grid-template-columns: repeat(4,1fr);
-      gap: 18px;
-    }
-
-    .why-card {
-      background: white;
-      text-align: center;
-      padding: 28px 18px;
-      border-radius: 18px;
-      box-shadow: 0 8px 25px rgba(0,0,0,.05);
-    }
-
-    .why-card strong {
-      display: block;
-      font-size: 30px;
-      color: #0875e1;
-      margin-bottom: 8px;
-    }
-
-    .why-card span {
-      color: #667085;
-      font-size: 14px;
-    }
+    .why { background:#f5f9ff; }
+    .why-grid { display:grid; grid-template-columns: repeat(4,1fr); gap:18px; }
+    .why-card { background:white; text-align:center; padding:28px 18px; border-radius:18px; box-shadow:0 8px 25px rgba(0,0,0,.05); }
+    .why-card strong { display:block; font-size:30px; color:#0875e1; margin-bottom:8px; }
+    .why-card span { color:#667085; font-size:14px; }
 
     /* CONTACT */
+    .contact { background:white; }
+    .contact-grid { display:grid; grid-template-columns: .8fr 1.2fr; gap:35px; }
+    .contact-info { background: linear-gradient(135deg,#063b9c,#087eea); color:white; border-radius:25px; padding:35px; }
+    .contact-info h2 { font-size:30px; margin-bottom:15px; }
+    .contact-info > p { color:#dceeff; line-height:1.7; margin-bottom:25px; }
+    .info-item { display:flex; gap:13px; margin:20px 0; align-items:flex-start; }
+    .info-icon { width:42px; height:42px; background: rgba(255,255,255,.13); border-radius:12px; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+    .info-item small { display:block; color:#b9d8ff; margin-bottom:4px; }
 
-    .contact {
-      background: white;
+    .contact-form { background:#f8fafc; padding:32px; border-radius:25px; border:1px solid #e7edf5; }
+    .contact-form h2 { margin-bottom:8px; font-size:27px; }
+    .form-subtitle { color:#6b7280; font-size:14px; margin-bottom:22px; }
+    .form-group { margin-bottom:17px; }
+    .form-group label { display:block; font-size:14px; font-weight:bold; margin-bottom:7px; }
+    .form-group input, .form-group select, .form-group textarea {
+      width:100%; padding:14px; border:1px solid #d8e0ea; border-radius:12px; outline:none; font-size:15px; background:white; transition:.2s; font-family:inherit;
     }
-
-    .contact-grid {
-      display: grid;
-      grid-template-columns: .8fr 1.2fr;
-      gap: 35px;
+    .form-group textarea { min-height:100px; resize:vertical; }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+      border-color:#1682ef; box-shadow:0 0 0 3px rgba(22,130,239,.1);
     }
-
-    .contact-info {
-      background: linear-gradient(135deg,#063b9c,#087eea);
-      color: white;
-      border-radius: 25px;
-      padding: 35px;
-    }
-
-    .contact-info h2 {
-      font-size: 30px;
-      margin-bottom: 15px;
-    }
-
-    .contact-info > p {
-      color: #dceeff;
-      line-height: 1.7;
-      margin-bottom: 25px;
-    }
-
-    .info-item {
-      display: flex;
-      gap: 13px;
-      margin: 20px 0;
-      align-items: flex-start;
-    }
-
-    .info-icon {
-      width: 42px;
-      height: 42px;
-      background: rgba(255,255,255,.13);
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-    }
-
-    .info-item small {
-      display: block;
-      color: #b9d8ff;
-      margin-bottom: 4px;
-    }
-
-    .contact-form {
-      background: #f8fafc;
-      padding: 32px;
-      border-radius: 25px;
-      border: 1px solid #e7edf5;
-    }
-
-    .contact-form h2 {
-      margin-bottom: 8px;
-      font-size: 27px;
-    }
-
-    .form-subtitle {
-      color: #6b7280;
-      font-size: 14px;
-      margin-bottom: 22px;
-    }
-
-    .form-group {
-      margin-bottom: 17px;
-    }
-
-    .form-group label {
-      display: block;
-      font-size: 14px;
-      font-weight: bold;
-      margin-bottom: 7px;
-    }
-
-    .form-group input,
-    .form-group select,
-    .form-group textarea {
-      width: 100%;
-      padding: 14px;
-      border: 1px solid #d8e0ea;
-      border-radius: 12px;
-      outline: none;
-      font-size: 15px;
-      background: white;
-      transition: .2s;
-      font-family: inherit;
-    }
-
-    .form-group textarea {
-      min-height: 100px;
-      resize: vertical;
-    }
-
-    .form-group input:focus,
-    .form-group select:focus,
-    .form-group textarea:focus {
-      border-color: #1682ef;
-      box-shadow: 0 0 0 3px rgba(22,130,239,.1);
-    }
-
     .submit-btn {
-      width: 100%;
-      padding: 15px;
-      border: none;
-      border-radius: 13px;
-      background: #20c968;
-      color: white;
-      font-size: 16px;
-      font-weight: bold;
-      cursor: pointer;
-      transition: .3s;
+      width:100%; padding:15px; border:none; border-radius:13px; background:#20c968; color:white; font-size:16px; font-weight:bold; cursor:pointer; transition:.3s;
     }
-
-    .submit-btn:hover {
-      background: #14b75a;
-      transform: translateY(-2px);
-    }
+    .submit-btn:hover { background:#14b75a; transform: translateY(-2px); }
 
     /* FOOTER */
-
-    footer {
-      background: #071a36;
-      color: white;
-      padding: 35px 20px;
-      text-align: center;
-    }
-
-    footer h3 {
-      margin-bottom: 8px;
-    }
-
-    footer p {
-      color: #aebbd0;
-      font-size: 13px;
-      line-height: 1.7;
-    }
+    footer { background:#071a36; color:white; padding:35px 20px; text-align:center; }
+    footer h3 { margin-bottom:8px; }
+    footer p { color:#aebbd0; font-size:13px; line-height:1.7; }
 
     /* FLOATING WHATSAPP */
-
     .floating-whatsapp {
-      position: fixed;
-      right: 18px;
-      bottom: 20px;
-      width: 58px;
-      height: 58px;
-      border-radius: 50%;
-      background: #20d66b;
-      color: white;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 28px;
-      box-shadow: 0 8px 25px rgba(0,0,0,.25);
-      z-index: 999;
-      animation: pulse 2s infinite;
+      position: fixed; right:18px; bottom:20px; width:58px; height:58px; border-radius:50%;
+      background:#20d66b; color:white; display:flex; align-items:center; justify-content:center; font-size:28px;
+      box-shadow:0 8px 25px rgba(0,0,0,.25); z-index:999; animation:pulse 2s infinite;
     }
-
     @keyframes pulse {
-      0% {
-        box-shadow: 0 0 0 0 rgba(32,214,107,.5);
-      }
-
-      70% {
-        box-shadow: 0 0 0 14px rgba(32,214,107,0);
-      }
-
-      100% {
-        box-shadow: 0 0 0 0 rgba(32,214,107,0);
-      }
+      0% { box-shadow: 0 0 0 0 rgba(32,214,107,.5); }
+      70% { box-shadow: 0 0 0 14px rgba(32,214,107,0); }
+      100% { box-shadow: 0 0 0 0 rgba(32,214,107,0); }
     }
 
     /* TABLET */
-
     @media (max-width:850px) {
-
-      .menu-btn {
-        display: block;
-      }
-
-      nav {
-        display: none;
-        position: absolute;
-        top: 70px;
-        left: 12px;
-        right: 12px;
-        background: #073c91;
-        padding: 10px;
-        border-radius: 16px;
-        flex-direction: column;
-        box-shadow: 0 15px 30px rgba(0,0,0,.2);
-      }
-
-      nav.active {
-        display: flex;
-      }
-
-      .hero {
-        min-height: auto;
-      }
-
-      .hero-container {
-        grid-template-columns: 1fr;
-        padding: 45px 18px 55px;
-        gap: 30px;
-      }
-
-      .hero-content {
-        text-align: center;
-      }
-
-      .hero h1 {
-        font-size: 40px;
-      }
-
-      .hero p {
-        font-size: 16px;
-      }
-
-      .hero-buttons {
-        justify-content: center;
-      }
-
-      .studio-card {
-        padding: 24px;
-      }
-
-      .service-grid {
-        grid-template-columns: repeat(2,1fr);
-      }
-
-      .why-grid {
-        grid-template-columns: repeat(2,1fr);
-      }
-
-      .contact-grid {
-        grid-template-columns: 1fr;
-      }
+      .menu-btn { display: block; }
+      nav { display: none; position:absolute; top:70px; left:12px; right:12px; background:#073c91; padding:10px; border-radius:16px; flex-direction:column; box-shadow:0 15px 30px rgba(0,0,0,.2); }
+      nav.active { display:flex; }
+      .hero { min-height:auto; }
+      .hero-container { grid-template-columns:1fr; padding:45px 18px 55px; gap:30px; }
+      .hero-content { text-align:center; }
+      .hero h1 { font-size:40px; }
+      .hero p { font-size:16px; }
+      .hero-buttons { justify-content:center; }
+      .studio-card { padding:24px; }
+      .service-grid { grid-template-columns: repeat(2,1fr); }
+      .why-grid { grid-template-columns: repeat(2,1fr); }
+      .contact-grid { grid-template-columns: 1fr; }
     }
 
     /* MOBILE */
-
     @media (max-width:520px) {
-
-      .nav {
-        padding: 10px 13px;
-      }
-
-      .logo-icon {
-        width: 40px;
-        height: 40px;
-      }
-
-      .logo-text h2 {
-        font-size: 14px;
-      }
-
-      .logo-text span {
-        font-size: 9px;
-      }
-
-      .hero-container {
-        padding: 35px 15px 45px;
-      }
-
-      .hero h1 {
-        font-size: 34px;
-      }
-
-      .hero p {
-        font-size: 15px;
-      }
-
-      .hero-buttons {
-        flex-direction: column;
-        width: 100%;
-      }
-
-      .hero-buttons .btn {
-        width: 100%;
-      }
-
-      .studio-card {
-        text-align: center;
-      }
-
-      .studio-icon {
-        margin-left: auto;
-        margin-right: auto;
-      }
-
-      section {
-        padding: 55px 15px;
-      }
-
-      .section-title h2 {
-        font-size: 28px;
-      }
-
-      .service-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .why-grid {
-        grid-template-columns: 1fr 1fr;
-        gap: 12px;
-      }
-
-      .why-card {
-        padding: 22px 10px;
-      }
-
-      .why-card strong {
-        font-size: 25px;
-      }
-
-      .contact-info,
-      .contact-form {
-        padding: 23px;
-      }
-
-      .contact-info h2,
-      .contact-form h2 {
-        font-size: 24px;
-      }
-
-      .floating-whatsapp {
-        width: 54px;
-        height: 54px;
-        right: 15px;
-        bottom: 15px;
-      }
+      .nav { padding: 10px 13px; }
+      .logo-icon { width:40px; height:40px; }
+      .logo-text h2 { font-size:14px; }
+      .logo-text span { font-size:9px; }
+      .hero-container { padding:35px 15px 45px; }
+      .hero h1 { font-size:34px; }
+      .hero p { font-size:15px; }
+      .hero-buttons { flex-direction:column; width:100%; }
+      .hero-buttons .btn { width:100%; }
+      .studio-card { text-align:center; }
+      .studio-icon { margin-left:auto; margin-right:auto; }
+      section { padding:55px 15px; }
+      .section-title h2 { font-size:28px; }
+      .service-grid { grid-template-columns: 1fr; }
+      .why-grid { grid-template-columns: 1fr 1fr; gap:12px; }
+      .why-card { padding:22px 10px; }
+      .why-card strong { font-size:25px; }
+      .contact-info, .contact-form { padding:23px; }
+      .contact-info h2, .contact-form h2 { font-size:24px; }
+      .floating-whatsapp { width:54px; height:54px; right:15px; bottom:15px; }
     }
   </style>
 </head>
@@ -721,617 +221,273 @@
 <body>
 
   <!-- HEADER -->
-
   <header>
-
     <div class="nav">
-
       <a href="#home" class="logo">
-
-        <div class="logo-icon">
-          A
-        </div>
-
+        <div class="logo-icon">A</div>
         <div class="logo-text">
           <h2>APNA DIGITAL STUDIO</h2>
           <span>DIGITAL STUDIO</span>
         </div>
-
       </a>
 
-      <div class="menu-btn" onclick="toggleMenu()">
-        ☰
-      </div>
+      <!-- menu button with aria-expanded -->
+      <div class="menu-btn" onclick="toggleMenu()" aria-expanded="false" aria-label="Menu">☰</div>
 
-      <nav id="menu">
+      <nav id="menu" aria-label="Primary navigation">
         <a href="#home" onclick="closeMenu()">Home</a>
         <a href="#services" onclick="closeMenu()">Services</a>
         <a href="#about" onclick="closeMenu()">About</a>
         <a href="#contact" onclick="closeMenu()">Contact</a>
       </nav>
-
     </div>
-
   </header>
 
-
   <!-- HERO -->
-
   <section class="hero" id="home">
-
     <div class="hero-container">
-
       <div class="hero-content">
+        <div class="badge">✓ Trusted Digital Services Provider</div>
 
-        <div class="badge">
-          ✓ Trusted Digital Services Provider
-        </div>
+        <h1>आपकी सभी <span>डिजिटल सेवाएँ</span> एक ही जगह पर</h1>
 
-        <h1>
-          आपकी सभी <span>डिजिटल सेवाएँ</span>
-          एक ही जगह पर
-        </h1>
-
-        <p>
-          Apna Digital Studio पर आपको CSC और विभिन्न डिजिटल
-          सेवाओं की सुविधा सरल, तेज और भरोसेमंद तरीके से मिलती है।
-        </p>
+        <p>Apna Digital Studio पर आपको CSC और विभिन्न डिजिटल सेवाओं की सुविधा सरल, तेज और भरोसेमंद तरीके से मिलती है।</p>
 
         <div class="hero-buttons">
-
-          <a
-            href="tel:+917480949254"
-            class="btn btn-primary">
-            📞 Call Now
-          </a>
-
-          <a
-            href="https://wa.me/917480949254"
-            target="_blank"
-            class="btn btn-whatsapp">
-            💬 WhatsApp
-          </a>
-
+          <a href="tel:+917480949254" class="btn btn-primary">📞 Call Now</a>
+          <a href="https://wa.me/917480949254" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp">💬 WhatsApp</a>
         </div>
-
       </div>
-
 
       <div class="studio-card">
-
-        <div class="studio-icon">
-          🏢
-        </div>
-
-        <h2>
-          APNA DIGITAL STUDIO
-        </h2>
-
-        <p>
-          CSC VLE - Narendra Kumar
-        </p>
-
-        <div class="status">
-          <span class="green-dot"></span>
-          सेवा उपलब्ध है
-        </div>
-
+        <div class="studio-icon">🏢</div>
+        <h2>APNA DIGITAL STUDIO</h2>
+        <p>CSC VLE - Narendra Kumar</p>
+        <div class="status"><span class="green-dot"></span>सेवा उपलब्ध है</div>
       </div>
-
     </div>
-
   </section>
-
 
   <!-- SERVICES -->
-
   <section class="services" id="services">
-
     <div class="container">
-
       <div class="section-title">
-
         <span>Our Services</span>
-
-        <h2>
-          हमारी डिजिटल सेवाएँ
-        </h2>
-
-        <p>
-          आपके रोज़मर्रा के जरूरी डिजिटल कामों के लिए
-          एक ही जगह पर सुविधाजनक सेवा।
-        </p>
-
+        <h2>हमारी डिजिटल सेवाएँ</h2>
+        <p>आपके रोज़मर्रा के जरूरी डिजिटल कामों के लिए एक ही जगह पर सुविधाजनक सेवा।</p>
       </div>
-
 
       <div class="service-grid">
-
         <div class="service-card">
-
-          <div class="service-icon">
-            🪪
-          </div>
-
-          <h3>
-            आधार संबंधित सेवाएँ
-          </h3>
-
-          <p>
-            आधार से संबंधित उपलब्ध डिजिटल सुविधाओं में सहायता।
-          </p>
-
+          <div class="service-icon">🪪</div>
+          <h3>आधार संबंधित सेवाएँ</h3>
+          <p>आधार से संबंधित उपलब्ध डिजिटल सुविधाओं में सहायता।</p>
         </div>
 
-
         <div class="service-card">
-
-          <div class="service-icon">
-            💳
-          </div>
-
-          <h3>
-            PAN Card
-          </h3>
-
-          <p>
-            PAN Card आवेदन एवं संबंधित ऑनलाइन कार्यों में सहायता।
-          </p>
-
+          <div class="service-icon">💳</div>
+          <h3>PAN Card</h3>
+          <p>PAN Card आवेदन एवं संबंधित ऑनलाइन कार्यों में सहायता।</p>
         </div>
 
-
         <div class="service-card">
-
-          <div class="service-icon">
-            📄
-          </div>
-
-          <h3>
-            Online Forms
-          </h3>
-
-          <p>
-            विभिन्न सरकारी एवं ऑनलाइन फॉर्म भरने की सुविधा।
-          </p>
-
+          <div class="service-icon">📄</div>
+          <h3>Online Forms</h3>
+          <p>विभिन्न सरकारी एवं ऑनलाइन फॉर्म भरने की सुविधा।</p>
         </div>
 
-
         <div class="service-card">
-
-          <div class="service-icon">
-            🖨️
-          </div>
-
-          <h3>
-            Print & Scan
-          </h3>
-
-          <p>
-            Print, Scan और Document संबंधित सुविधाएँ।
-          </p>
-
+          <div class="service-icon">🖨️</div>
+          <h3>Print & Scan</h3>
+          <p>Print, Scan और Document संबंधित सुविधाएँ।</p>
         </div>
 
-
         <div class="service-card">
-
-          <div class="service-icon">
-            💻
-          </div>
-
-          <h3>
-            Online Services
-          </h3>
-
-          <p>
-            विभिन्न ऑनलाइन सेवाओं के लिए डिजिटल सहायता।
-          </p>
-
+          <div class="service-icon">💻</div>
+          <h3>Online Services</h3>
+          <p>विभिन्न ऑनलाइन सेवाओं के लिए डिजिटल सहायता।</p>
         </div>
 
-
         <div class="service-card">
-
-          <div class="service-icon">
-            🏦
-          </div>
-
-          <h3>
-            Banking Services
-          </h3>
-
-          <p>
-            उपलब्ध बैंकिंग एवं डिजिटल भुगतान सेवाओं में सहायता।
-          </p>
-
+          <div class="service-icon">🏦</div>
+          <h3>Banking Services</h3>
+          <p>उपलब्ध बैंकिंग एवं डिजिटल भुगतान सेवाओं में सहायता।</p>
         </div>
-
       </div>
-
     </div>
-
   </section>
-
 
   <!-- WHY US -->
-
   <section class="why" id="about">
-
     <div class="container">
-
       <div class="section-title">
-
         <span>Why Choose Us</span>
-
-        <h2>
-          हम पर भरोसा क्यों करें?
-        </h2>
-
+        <h2>हम पर भरोसा क्यों करें?</h2>
       </div>
-
 
       <div class="why-grid">
-
-        <div class="why-card">
-          <strong>01</strong>
-          <span>सरल प्रक्रिया</span>
-        </div>
-
-        <div class="why-card">
-          <strong>02</strong>
-          <span>तेज़ सेवा</span>
-        </div>
-
-        <div class="why-card">
-          <strong>03</strong>
-          <span>भरोसेमंद सहायता</span>
-        </div>
-
-        <div class="why-card">
-          <strong>04</strong>
-          <span>एक ही जगह सुविधा</span>
-        </div>
-
+        <div class="why-card"><strong>01</strong><span>सरल प्रक्रिया</span></div>
+        <div class="why-card"><strong>02</strong><span>तेज़ सेवा</span></div>
+        <div class="why-card"><strong>03</strong><span>भरोसेमंद सहायता</span></div>
+        <div class="why-card"><strong>04</strong><span>एक ही जगह सुविधा</span></div>
       </div>
-
     </div>
-
   </section>
-
 
   <!-- CONTACT -->
-
   <section class="contact" id="contact">
-
     <div class="container">
-
       <div class="section-title">
-
         <span>Contact Us</span>
-
-        <h2>
-          हमसे संपर्क करें
-        </h2>
-
-        <p>
-          नीचे अपनी जानकारी भरें और सीधे WhatsApp पर
-          अपनी सेवा की जानकारी भेजें।
-        </p>
-
+        <h2>हमसे संपर्क करें</h2>
+        <p>नीचे अपनी जानकारी भरें और सीधे WhatsApp पर अपनी सेवा की जानकारी भेजें।</p>
       </div>
-
 
       <div class="contact-grid">
-
-
         <!-- CONTACT INFO -->
-
         <div class="contact-info">
-
-          <h2>
-            Apna Digital Studio
-          </h2>
-
-          <p>
-            किसी भी डिजिटल सेवा के लिए हमसे संपर्क करें।
-            आपकी जरूरत के अनुसार जानकारी प्राप्त करें।
-          </p>
-
+          <h2>Apna Digital Studio</h2>
+          <p>किसी भी डिजिटल सेवा के लिए हमसे संपर्क करें। आपकी जरूरत के अनुसार जानकारी प्राप्त करें।</p>
 
           <div class="info-item">
-
-            <div class="info-icon">
-              👤
-            </div>
-
-            <div>
-              <small>संचालक</small>
-              <strong>Narendra Kumar</strong>
-            </div>
-
+            <div class="info-icon">👤</div>
+            <div><small>संचालक</small><strong>Narendra Kumar</strong></div>
           </div>
-
 
           <div class="info-item">
-
-            <div class="info-icon">
-              📍
-            </div>
-
-            <div>
-              <small>स्थान</small>
-              <strong>PratapPur Block Road</strong>
-            </div>
-
+            <div class="info-icon">📍</div>
+            <div><small>स्थान</small><strong>PratapPur Block Road</strong></div>
           </div>
-
 
           <div class="info-item">
-
-            <div class="info-icon">
-              📱
-            </div>
-
-            <div>
-              <small>WhatsApp</small>
-              <strong>7480949254</strong>
-            </div>
-
+            <div class="info-icon">📱</div>
+            <div><small>WhatsApp</small><strong>7480949254</strong></div>
           </div>
-
         </div>
-
 
         <!-- CONTACT FORM -->
-
         <div class="contact-form">
-
-          <h2>
-            WhatsApp पर पूछताछ करें
-          </h2>
-
-          <p class="form-subtitle">
-            जानकारी भरें और WhatsApp पर संदेश भेजें।
-          </p>
-
+          <h2>WhatsApp पर पूछताछ करें</h2>
+          <p class="form-subtitle">जानकारी भरें और WhatsApp पर संदेश भेजें।</p>
 
           <form onsubmit="sendWhatsApp(event)">
-
             <div class="form-group">
-
-              <label>
-                आपका नाम *
-              </label>
-
-              <input
-                type="text"
-                id="name"
-                placeholder="अपना नाम लिखें"
-                required
-              >
-
+              <label>आपका नाम *</label>
+              <input type="text" id="name" placeholder="अपना नाम लिखें" required>
             </div>
 
-
             <div class="form-group">
-
-              <label>
-                मोबाइल नंबर *
-              </label>
-
-              <input
-                type="tel"
-                id="mobile"
-                placeholder="10 अंकों का मोबाइल नंबर"
-                maxlength="10"
-                pattern="[0-9]{10}"
-                required
-              >
-
+              <label>मोबाइल नंबर *</label>
+              <input type="tel" id="mobile" placeholder="10 अंकों का मोबाइल नंबर" maxlength="10" pattern="[0-9]{10}" required>
             </div>
 
-
             <div class="form-group">
-
-              <label>
-                कौन सी सेवा चाहिए? *
-              </label>
-
+              <label>कौन सी सेवा चाहिए? *</label>
               <select id="service" required>
-
-                <option value="">
-                  -- सेवा चुनें --
-                </option>
-
-                <option>
-                  आधार संबंधित सेवा
-                </option>
-
-                <option>
-                  PAN Card
-                </option>
-
-                <option>
-                  Online Form
-                </option>
-
-                <option>
-                  Print & Scan
-                </option>
-
-                <option>
-                  Online Service
-                </option>
-
-                <option>
-                  Banking Service
-                </option>
-
-                <option>
-                  अन्य सेवा
-                </option>
-
+                <option value="">-- सेवा चुनें --</option>
+                <option>आधार संबंधित सेवा</option>
+                <option>PAN Card</option>
+                <option>Online Form</option>
+                <option>Print & Scan</option>
+                <option>Online Service</option>
+                <option>Banking Service</option>
+                <option>अन्य सेवा</option>
               </select>
-
             </div>
-
 
             <div class="form-group">
-
-              <label>
-                संदेश
-              </label>
-
-              <textarea
-                id="message"
-                placeholder="अपनी समस्या या जरूरत लिखें..."
-              ></textarea>
-
+              <label>संदेश</label>
+              <textarea id="message" placeholder="अपनी समस्या या जरूरत लिखें..."></textarea>
             </div>
 
-
-            <button
-              type="submit"
-              class="submit-btn">
-              💬 WhatsApp पर संदेश भेजें
-            </button>
-
+            <button type="submit" class="submit-btn">💬 WhatsApp पर संदेश भेजें</button>
           </form>
-
         </div>
-
       </div>
-
     </div>
-
   </section>
 
-
   <!-- FOOTER -->
-
   <footer>
-
-    <h3>
-      APNA DIGITAL STUDIO
-    </h3>
-
-    <p>
-      CSC VLE - Narendra Kumar
-    </p>
-
-    <p>
-      📱 7480949254
-    </p>
-
-    <p>
-      © 2026 Apna Digital Studio. All Rights Reserved.
-    </p>
-
+    <h3>APNA DIGITAL STUDIO</h3>
+    <p>CSC VLE - Narendra Kumar</p>
+    <p>📱 7480949254</p>
+    <p>© 2026 Apna Digital Studio. All Rights Reserved.</p>
   </footer>
 
-
   <!-- FLOATING WHATSAPP -->
-
-  <a
-    href="https://wa.me/917480949254"
-    target="_blank"
-    class="floating-whatsapp"
-    aria-label="WhatsApp">
-    💬
-  </a>
-
+  <a href="https://wa.me/917480949254" target="_blank" rel="noopener noreferrer" class="floating-whatsapp" aria-label="WhatsApp">💬</a>
 
   <!-- JAVASCRIPT -->
-
   <script>
-
+    // Toggle menu with aria-expanded
     function toggleMenu() {
-
-      document
-        .getElementById("menu")
-        .classList.toggle("active");
-
+      const menu = document.getElementById("menu");
+      const btn = document.querySelector(".menu-btn");
+      if (!menu || !btn) return;
+      menu.classList.toggle("active");
+      const expanded = menu.classList.contains("active");
+      btn.setAttribute("aria-expanded", expanded ? "true" : "false");
     }
-
 
     function closeMenu() {
-
-      document
-        .getElementById("menu")
-        .classList.remove("active");
-
+      const menu = document.getElementById("menu");
+      const btn = document.querySelector(".menu-btn");
+      if (!menu) return;
+      menu.classList.remove("active");
+      if (btn) btn.setAttribute("aria-expanded", "false");
     }
 
+    // Close menu when clicking outside or pressing Escape
+    document.addEventListener('click', function(e) {
+      const menu = document.getElementById('menu');
+      const btn = document.querySelector('.menu-btn');
+      if (!menu || !btn) return;
+      if (menu.classList.contains('active') && !menu.contains(e.target) && !btn.contains(e.target)) {
+        closeMenu();
+      }
+    });
 
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeMenu();
+    });
+
+    // sendWhatsApp: validate and open wa.me with encoded text
     function sendWhatsApp(event) {
-
       event.preventDefault();
 
-      const name =
-        document.getElementById("name").value.trim();
-
-      const mobile =
-        document.getElementById("mobile").value.trim();
-
-      const service =
-        document.getElementById("service").value;
-
-      const message =
-        document.getElementById("message").value.trim();
-
+      const name = document.getElementById("name").value.trim();
+      const mobile = document.getElementById("mobile").value.trim();
+      const service = document.getElementById("service").value;
+      const message = document.getElementById("message").value.trim();
 
       if (!name || !mobile || !service) {
-
         alert("कृपया सभी जरूरी जानकारी भरें।");
-
         return;
-
       }
 
+      // Validate Indian mobile (starts with 6-9 and 10 digits)
+      if (!/^[6-9]\d{9}$/.test(mobile)) {
+        alert("कृपया मान्य 10‑अंकों का मोबाइल नंबर डालें (6/7/8/9 से शुरू)।");
+        return;
+      }
 
-      const whatsappNumber =
-        "917480949254";
+      const whatsappNumber = "917480949254";
 
-
-      const text =
-        "नमस्ते Apna Digital Studio,%0A%0A" +
-
-        "👤 नाम: " +
-        encodeURIComponent(name) +
-        "%0A" +
-
-        "📱 मोबाइल: " +
-        encodeURIComponent(mobile) +
-        "%0A" +
-
-        "📌 सेवा: " +
-        encodeURIComponent(service) +
-        "%0A" +
-
-        "📝 संदेश: " +
-        encodeURIComponent(
-          message || "कोई अतिरिक्त संदेश नहीं"
-        ) +
-
-        "%0A%0A" +
-
+      const plainText =
+        "नमस्ते Apna Digital Studio,\n\n" +
+        "👤 नाम: " + name + "\n" +
+        "📱 मोबाइल: " + mobile + "\n" +
+        "📌 सेवा: " + service + "\n" +
+        "📝 संदेश: " + (message || "कोई अतिरिक्त संदेश नहीं") + "\n\n" +
         "मुझे इस सेवा के बारे में जानकारी चाहिए।";
 
+      const url = "https://wa.me/" + whatsappNumber + "?text=" + encodeURIComponent(plainText);
 
-      const url =
-        "https://wa.me/" +
-        whatsappNumber +
-        "?text=" +
-        text;
-
-
-      window.open(url, "_blank");
-
+      // Open safely
+      const win = window.open(url, "_blank");
+      if (win) { win.opener = null; }
     }
-
   </script>
-
 </body>
 </html>
