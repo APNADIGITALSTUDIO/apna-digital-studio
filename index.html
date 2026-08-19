@@ -7,6 +7,7 @@
   <meta name="description" content="Apna Digital Studio - सभी डिजिटल सेवाएं एक ही जगह पर। CSC VLE - Narendra Kumar">
 
   <style>
+    /* (पहले जैसा ही स्टाइल — केवल modal से जुड़े नए स्टाइल जोड़े गए हैं) */
     * { margin: 0; padding: 0; box-sizing: border-box; }
     html, body { max-width: 100%; overflow-x: hidden; scroll-behavior: smooth; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
     body {
@@ -16,7 +17,6 @@
     }
     a { text-decoration: none; color: inherit; }
 
-    /* HEADER */
     header {
       position: sticky; top: 0; z-index: 1000;
       background: rgba(5,43,105,0.97);
@@ -46,7 +46,6 @@
       display: none; color: white; font-size: 30px; cursor: pointer;
     }
 
-    /* HERO */
     .hero {
       min-height: 650px; display:flex; align-items:center; position:relative;
       overflow:hidden;
@@ -79,7 +78,6 @@
     .btn-primary { background: white; color: #0861c9; box-shadow: 0 10px 25px rgba(0,0,0,.15); }
     .btn-whatsapp { background: #20d66b; color: white; box-shadow: 0 10px 25px rgba(0,0,0,.12); }
 
-    /* STUDIO CARD */
     .studio-card {
       background: rgba(255,255,255,.12); border:1px solid rgba(255,255,255,.25);
       backdrop-filter: blur(16px); padding:30px; border-radius:28px; color:white;
@@ -98,7 +96,6 @@
     }
     .green-dot { width:9px; height:9px; background:#39f27c; border-radius:50%; box-shadow:0 0 10px #39f27c; }
 
-    /* SECTION */
     section { padding:75px 20px; }
     .container { max-width:1150px; margin:auto; }
 
@@ -107,7 +104,6 @@
     .section-title h2 { font-size:36px; margin:10px 0; }
     .section-title p { color:#667085; max-width:650px; margin:auto; line-height:1.6; }
 
-    /* SERVICES */
     .services { background: #fff; }
     .service-grid { display:grid; grid-template-columns: repeat(3,1fr); gap:20px; }
     .service-card {
@@ -126,14 +122,12 @@
     .service-card h3 { margin-bottom:9px; font-size:18px; }
     .service-card p { color:#687386; font-size:14px; line-height:1.6; }
 
-    /* WHY */
     .why { background:#f5f9ff; }
     .why-grid { display:grid; grid-template-columns: repeat(4,1fr); gap:18px; }
     .why-card { background:white; text-align:center; padding:28px 18px; border-radius:18px; box-shadow:0 8px 25px rgba(0,0,0,.05); }
     .why-card strong { display:block; font-size:30px; color:#0875e1; margin-bottom:8px; }
     .why-card span { color:#667085; font-size:14px; }
 
-    /* CONTACT */
     .contact { background:white; }
     .contact-grid { display:grid; grid-template-columns: .8fr 1.2fr; gap:35px; }
     .contact-info { background: linear-gradient(135deg,#063b9c,#087eea); color:white; border-radius:25px; padding:35px; }
@@ -160,12 +154,10 @@
     }
     .submit-btn:hover { background:#14b75a; transform: translateY(-2px); }
 
-    /* FOOTER */
     footer { background:#071a36; color:white; padding:35px 20px; text-align:center; }
     footer h3 { margin-bottom:8px; }
     footer p { color:#aebbd0; font-size:13px; line-height:1.7; }
 
-    /* FLOATING WHATSAPP */
     .floating-whatsapp {
       position: fixed; right:18px; bottom:20px; width:58px; height:58px; border-radius:50%;
       background:#20d66b; color:white; display:flex; align-items:center; justify-content:center; font-size:28px;
@@ -177,7 +169,24 @@
       100% { box-shadow: 0 0 0 0 rgba(32,214,107,0); }
     }
 
-    /* TABLET */
+    /* --- Modal styles --- */
+    .modal-backdrop {
+      position: fixed; inset: 0; background: rgba(0,0,0,0.45); display: none; align-items: center; justify-content: center; z-index: 1200;
+    }
+    .modal-backdrop.open { display: flex; }
+    .modal {
+      width: 100%; max-width: 520px; background: #fff; border-radius: 14px; padding: 20px 22px; box-shadow: 0 30px 80px rgba(8,25,50,.3);
+      transform: translateY(-8px); transition: transform .18s ease;
+    }
+    .modal h3 { margin-bottom: 8px; font-size: 20px; color:#07214a; }
+    .modal p { margin-bottom:14px; color:#556077; font-size:14px; }
+    .modal .form-group { margin-bottom: 12px; }
+    .modal .actions { display:flex; gap:10px; margin-top:10px; }
+    .modal .btn { padding:10px 14px; border-radius:10px; font-size:15px; }
+    .btn-cancel { background:#eef3fb; color:#0a3f86; border:1px solid #d8e6ff; }
+    .btn-send { background:#20c968; color:white; border:none; }
+
+    /* Responsive tweaks */
     @media (max-width:850px) {
       .menu-btn { display: block; }
       nav { display: none; position:absolute; top:70px; left:12px; right:12px; background:#073c91; padding:10px; border-radius:16px; flex-direction:column; box-shadow:0 15px 30px rgba(0,0,0,.2); }
@@ -193,8 +202,6 @@
       .why-grid { grid-template-columns: repeat(2,1fr); }
       .contact-grid { grid-template-columns: 1fr; }
     }
-
-    /* MOBILE */
     @media (max-width:520px) {
       .nav { padding: 10px 13px; }
       .logo-icon { width:40px; height:40px; }
@@ -216,6 +223,7 @@
       .contact-info, .contact-form { padding:23px; }
       .contact-info h2, .contact-form h2 { font-size:24px; }
       .floating-whatsapp { width:54px; height:54px; right:15px; bottom:15px; }
+      .modal { margin: 0 12px; }
     }
   </style>
 </head>
@@ -233,7 +241,6 @@
         </div>
       </a>
 
-      <!-- menu button with aria-expanded -->
       <div class="menu-btn" onclick="toggleMenu()" aria-expanded="false" aria-label="Menu">☰</div>
 
       <nav id="menu" aria-label="Primary navigation">
@@ -280,37 +287,37 @@
       </div>
 
       <div class="service-grid">
-        <div class="service-card" role="button" tabindex="0" aria-label="आधार संबंधित सेवाएँ के लिए WhatsApp खोलें" data-service="आधार संबंधित सेवाएँ">
+        <div class="service-card" role="button" tabindex="0" aria-label="आधार संबंधित सेवाएँ के लिए जानकारी भेजें" data-service="आधार संबंधित सेवाएँ">
           <div class="service-icon">🪪</div>
           <h3>आधार संबंधित सेवाएँ</h3>
           <p>आधार से संबंधित उपलब्ध डिजिटल सुविधाओं में सहायता।</p>
         </div>
 
-        <div class="service-card" role="button" tabindex="0" aria-label="PAN Card के लिए WhatsApp खोलें" data-service="PAN Card">
+        <div class="service-card" role="button" tabindex="0" aria-label="PAN Card के लिए जानकारी भेजें" data-service="PAN Card">
           <div class="service-icon">💳</div>
           <h3>PAN Card</h3>
           <p>PAN Card आवेदन एवं संबंधित ऑनलाइन कार्यों में सहायता।</p>
         </div>
 
-        <div class="service-card" role="button" tabindex="0" aria-label="Online Forms के लिए WhatsApp खोलें" data-service="Online Forms">
+        <div class="service-card" role="button" tabindex="0" aria-label="Online Forms के लिए जानकारी भेजें" data-service="Online Forms">
           <div class="service-icon">📄</div>
           <h3>Online Forms</h3>
           <p>विभिन्न सरकारी एवं ऑनलाइन फॉर्म भरने की सुविधा।</p>
         </div>
 
-        <div class="service-card" role="button" tabindex="0" aria-label="Print & Scan के लिए WhatsApp खोलें" data-service="Print & Scan">
+        <div class="service-card" role="button" tabindex="0" aria-label="Print & Scan के लिए जानकारी भेजें" data-service="Print & Scan">
           <div class="service-icon">🖨️</div>
           <h3>Print & Scan</h3>
           <p>Print, Scan और Document संबंधित सुविधाएँ।</p>
         </div>
 
-        <div class="service-card" role="button" tabindex="0" aria-label="Online Services के लिए WhatsApp खोलें" data-service="Online Services">
+        <div class="service-card" role="button" tabindex="0" aria-label="Online Services के लिए जानकारी भेजें" data-service="Online Services">
           <div class="service-icon">💻</div>
           <h3>Online Services</h3>
           <p>विभिन्न ऑनलाइन सेवाओं के लिए डिजिटल सहायता।</p>
         </div>
 
-        <div class="service-card" role="button" tabindex="0" aria-label="Banking Services के लिए WhatsApp खोलें" data-service="Banking Services">
+        <div class="service-card" role="button" tabindex="0" aria-label="Banking Services के लिए जानकारी भेजें" data-service="Banking Services">
           <div class="service-icon">🏦</div>
           <h3>Banking Services</h3>
           <p>उपलब्ध बैंकिंग एवं डिजिटल भुगतान सेवाओं में सहायता।</p>
@@ -346,7 +353,6 @@
       </div>
 
       <div class="contact-grid">
-        <!-- CONTACT INFO -->
         <div class="contact-info">
           <h2>Apna Digital Studio</h2>
           <p>किसी भी डिजिटल सेवा के लिए हमसे संपर्क करें। आपकी जरूरत के अनुसार जानकारी प्राप्त करें।</p>
@@ -367,7 +373,6 @@
           </div>
         </div>
 
-        <!-- CONTACT FORM -->
         <div class="contact-form">
           <h2>WhatsApp पर पूछताछ करें</h2>
           <p class="form-subtitle">जानकारी भरें और WhatsApp पर संदेश भेजें।</p>
@@ -420,9 +425,44 @@
   <!-- FLOATING WHATSAPP -->
   <a href="https://wa.me/917480949254" target="_blank" rel="noopener noreferrer" class="floating-whatsapp" aria-label="WhatsApp">💬</a>
 
+  <!-- --- Modal (hidden by default) --- -->
+  <div id="serviceModalBackdrop" class="modal-backdrop" aria-hidden="true">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-describedby="modalDesc">
+      <h3 id="modalTitle">सेवा के लिए जानकारी भेजें</h3>
+      <p id="modalDesc">नीचे अपनी जानकारी भरें — हम WhatsApp पर आपके संदेश के साथ खुलेगा।</p>
+
+      <form id="modalForm">
+        <div class="form-group">
+          <label for="modalService">सेवा</label>
+          <input type="text" id="modalService" readonly style="background:#f3f6fb; padding:10px; border-radius:8px; border:1px solid #e0e8f6;">
+        </div>
+
+        <div class="form-group">
+          <label for="modalName">आपका नाम *</label>
+          <input type="text" id="modalName" required placeholder="अपना नाम लिखें" style="padding:10px; border-radius:8px; border:1px solid #d8e0ea; width:100%;">
+        </div>
+
+        <div class="form-group">
+          <label for="modalMobile">मोबाइल नंबर *</label>
+          <input type="tel" id="modalMobile" required placeholder="10 अंकों का मोबाइल नंबर" maxlength="10" pattern="[0-9]{10}" style="padding:10px; border-radius:8px; border:1px solid #d8e0ea; width:100%;">
+        </div>
+
+        <div class="form-group">
+          <label for="modalMessage">संदेश</label>
+          <textarea id="modalMessage" placeholder="अपनी समस्या या जरूरत लिखें..." style="padding:10px; border-radius:8px; border:1px solid #d8e0ea; width:100%; min-height:80px;"></textarea>
+        </div>
+
+        <div class="actions">
+          <button type="button" class="btn btn-cancel" id="modalCancel">रद्द करें</button>
+          <button type="submit" class="btn btn-send">WhatsApp पर भेजें</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
   <!-- JAVASCRIPT -->
   <script>
-    // Menu toggle (unchanged)
+    // Menu toggle (same as before)
     function toggleMenu() {
       const menu = document.getElementById("menu");
       const btn = document.querySelector(".menu-btn");
@@ -453,7 +493,7 @@
       if (e.key === 'Escape') closeMenu();
     });
 
-    // sendWhatsApp from form
+    // Contact form (existing) sendWhatsApp
     function sendWhatsApp(event) {
       event.preventDefault();
 
@@ -467,7 +507,6 @@
         return;
       }
 
-      // Validate Indian mobile (starts with 6-9 and 10 digits)
       if (!/^[6-9]\d{9}$/.test(mobile)) {
         alert("कृपया मान्य 10‑अंकों का मोबाइल नंबर डालें (6/7/8/9 से शुरू)।");
         return;
@@ -489,43 +528,102 @@
       if (win) { win.opener = null; }
     }
 
-    // --- New: open WhatsApp when a service card is clicked (with keyboard support) ---
+    // --- Modal logic for service cards ---
     (function () {
       const whatsappNumber = "917480949254";
+      const backdrop = document.getElementById('serviceModalBackdrop');
+      const modalForm = document.getElementById('modalForm');
+      const modalService = document.getElementById('modalService');
+      const modalName = document.getElementById('modalName');
+      const modalMobile = document.getElementById('modalMobile');
+      const modalMessage = document.getElementById('modalMessage');
+      const modalCancel = document.getElementById('modalCancel');
+      let lastFocusedElement = null;
 
-      function openWhatsAppForService(serviceName) {
-        if (!serviceName) serviceName = "सेवा";
-        const prefilled =
-          "नमस्ते Apna Digital Studio,\n\n" +
-          "मैं \"" + serviceName + "\" सेवा के बारे में जानकारी चाहता/चाहती हूँ।\n\n" +
-          "नाम: \n" +
-          "मोबाइल: \n\n" +
-          "कृपया सहायता करें।";
-        const url = "https://wa.me/" + whatsappNumber + "?text=" + encodeURIComponent(prefilled);
-        const win = window.open(url, "_blank");
-        if (win) { win.opener = null; }
+      function openModal(serviceName) {
+        lastFocusedElement = document.activeElement;
+        modalService.value = serviceName || '';
+        modalName.value = '';
+        modalMobile.value = '';
+        modalMessage.value = '';
+        backdrop.classList.add('open');
+        backdrop.setAttribute('aria-hidden', 'false');
+        // focus first input
+        setTimeout(() => modalName.focus(), 100);
+        // prevent background scroll
+        document.body.style.overflow = 'hidden';
       }
 
-      // Attach handlers to all service cards
+      function closeModal() {
+        backdrop.classList.remove('open');
+        backdrop.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+        if (lastFocusedElement) lastFocusedElement.focus();
+      }
+
+      // click on cards
       document.addEventListener('DOMContentLoaded', function () {
         const cards = document.querySelectorAll('.service-card');
         cards.forEach(card => {
-          // Determine service name from data attribute or fallback to heading text
           const serviceName = card.getAttribute('data-service') || (card.querySelector('h3') ? card.querySelector('h3').textContent.trim() : '');
-
-          // Click
           card.addEventListener('click', function () {
-            openWhatsAppForService(serviceName);
+            openModal(serviceName);
           });
-
-          // Keyboard support: Enter and Space open WhatsApp
           card.addEventListener('keydown', function (e) {
             if (e.key === 'Enter' || e.key === ' ') {
               e.preventDefault();
-              openWhatsAppForService(serviceName);
+              openModal(serviceName);
             }
           });
         });
+      });
+
+      // backdrop click closes if click outside modal
+      backdrop.addEventListener('click', function (e) {
+        if (e.target === backdrop) closeModal();
+      });
+
+      // cancel button
+      modalCancel.addEventListener('click', function () {
+        closeModal();
+      });
+
+      // Esc to close
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && backdrop.classList.contains('open')) {
+          closeModal();
+        }
+      });
+
+      // handle modal form submit
+      modalForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+        const name = modalName.value.trim();
+        const mobile = modalMobile.value.trim();
+        const service = modalService.value.trim();
+        const message = modalMessage.value.trim();
+
+        if (!name || !mobile) {
+          alert('कृपया नाम और मोबाइल नंबर भरें।');
+          return;
+        }
+        if (!/^[6-9]\d{9}$/.test(mobile)) {
+          alert('कृपया मान्य 10‑अंकों का मोबाइल नंबर डालें (6/7/8/9 से शुरू)।');
+          return;
+        }
+
+        const plainText =
+          "नमस्ते Apna Digital Studio,\n\n" +
+          "👤 नाम: " + name + "\n" +
+          "📱 मोबाइल: " + mobile + "\n" +
+          "📌 सेवा: " + service + "\n" +
+          "📝 संदेश: " + (message || "कोई अतिरिक्त संदेश नहीं") + "\n\n" +
+          "कृपया सहायता करें।";
+
+        const url = "https://wa.me/" + whatsappNumber + "?text=" + encodeURIComponent(plainText);
+        const win = window.open(url, "_blank");
+        if (win) { win.opener = null; }
+        closeModal();
       });
     })();
   </script>
