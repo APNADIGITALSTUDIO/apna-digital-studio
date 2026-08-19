@@ -1861,28 +1861,41 @@ document.addEventListener('DOMContentLoaded', function() {
       });
   });
 
-  // Contact Form (client-only feedback)
-  const contactForm = document.getElementById('contactForm');
-  if (contactForm) {
-      contactForm.addEventListener('submit', function(e) {
-          e.preventDefault();
-          
-          const name = document.getElementById('name').value;
-          const email = document.getElementById('email').value;
-          const phone = document.getElementById('phone').value;
-          const service = document.getElementById('service').value;
-          const message = document.getElementById('message').value;
-          
-          if (name && email && phone && service && message) {
-              const formMessage = document.getElementById('formMessage');
-              formMessage.textContent = 'धन्यवाद! आपका संदेश भेज दिया गया है। हम जल्दी आपसे संपर्क करेंगे।';
-              formMessage.className = 'form-message success';
-              contactForm.reset();
-              
-              setTimeout(() => {
-                  formMessage.className = '';
-                  formMessage.textContent = '';
-              }, 5000);
+  // Contact Form → WhatsApp
+const contactForm = document.getElementById('contactForm');
+
+if (contactForm) {
+    contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        const name = document.getElementById('name').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const phone = document.getElementById('phone').value.trim();
+        const service = document.getElementById('service').value;
+        const message = document.getElementById('message').value.trim();
+
+        if (!name || !phone || !service || !message) {
+            alert('कृपया सभी जरूरी जानकारी भरें।');
+            return;
+        }
+
+        const whatsappText =
+            `नमस्ते APNA DIGITAL STUDIO!%0A%0A` +
+            `👤 नाम: ${name}%0A` +
+            `📱 मोबाइल: ${phone}%0A` +
+            `📧 Email: ${email}%0A` +
+            `🛠️ सेवा: ${service}%0A` +
+            `💬 संदेश: ${message}`;
+
+        const whatsappURL =
+            `https://wa.me/917480949254?text=${whatsappText}`;
+
+        window.open(whatsappURL, '_blank');
+
+        contactForm.reset();
+    });
+}
+
           }
       });
   }
