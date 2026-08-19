@@ -45,25 +45,29 @@
         .logo-icon {
             width: 50px;
             height: 50px;
-            background: linear-gradient(135deg, #ffd700, #ffed4e);
-            border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.8rem;
-            box-shadow: 0 4px 12px rgba(255, 215, 0, 0.3);
             transition: all 0.3s ease;
         }
 
-        .logo:hover .logo-icon {
-            box-shadow: 0 6px 20px rgba(255, 215, 0, 0.5);
-            transform: rotate(-5deg);
+        .logo-icon svg {
+            width: 50px;
+            height: 50px;
+            display: block;
+        }
+
+        .hero-logo-icon svg {
+            width: 70px;
+            height: 70px;
+            display: block;
         }
 
         .logo-text {
             display: flex;
             flex-direction: column;
             line-height: 1.2;
+            color: #fff;
         }
 
         .logo-text-main {
@@ -136,7 +140,6 @@
         .hero-logo-icon {
             width: 70px;
             height: 70px;
-            background: linear-gradient(135deg, #ffd700, #ffed4e);
             border-radius: 15px;
             display: flex;
             align-items: center;
@@ -343,6 +346,7 @@
             list-style: none;
             margin-bottom: 1.5rem;
             text-align: left;
+            padding-left: 0;
         }
 
         .service-features li {
@@ -841,6 +845,9 @@
             .hero-logo {
                 flex-direction: column;
             }
+
+            .logo-icon svg { width: 40px; height: 40px; }
+            .hero-logo-icon svg { width: 56px; height: 56px; }
         }
 
         @media (max-width: 480px) {
@@ -869,20 +876,33 @@
             .logo-text-sub {
                 font-size: 0.6rem;
             }
+
+            .logo-icon svg { width: 34px; height: 34px; }
+            .hero-logo-icon svg { width: 48px; height: 48px; }
         }
     </style>
 </head>
 <body>
 
 <!-- Navigation Bar -->
-<nav class="navbar">
+<nav class="navbar" role="navigation" aria-label="Primary">
     <div class="container">
-        <a href="#home" class="logo">
-            <div class="logo-icon">
-                🏢
+        <a href="#home" class="logo" aria-label="APNA DIGITAL STUDIO - Home">
+            <div class="logo-icon" aria-hidden="false">
+                <!-- Inline SVG: option C (wordmark) scaled to small size -->
+                <svg viewBox="0 0 420 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="APNA DIGITAL STUDIO logo">
+                  <defs>
+                    <linearGradient id="g3_nav" x1="0" x2="1">
+                      <stop offset="0" stop-color="#005bea"/>
+                      <stop offset="1" stop-color="#0052cc"/>
+                    </linearGradient>
+                  </defs>
+                  <rect x="0" y="0" width="100" height="100" rx="16" fill="url(#g3_nav)"/>
+                  <text x="50" y="62" font-family="Segoe UI, Tahoma, Arial, sans-serif" font-weight="800" font-size="44" fill="#fff" text-anchor="middle">ADS</text>
+                </svg>
             </div>
             <div class="logo-text">
-                <div class="logo-text-main">ADS</div>
+                <div class="logo-text-main">APNA DIGITAL STUDIO</div>
                 <div class="logo-text-sub">Digital Studio</div>
             </div>
         </a>
@@ -902,7 +922,21 @@
 <header id="home" class="hero">
     <div class="container">
         <div class="hero-logo">
-            <div class="hero-logo-icon">🏢</div>
+            <div class="hero-logo-icon" aria-hidden="false">
+                <!-- Larger inline SVG wordmark (option C) for hero -->
+                <svg viewBox="0 0 420 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="APNA DIGITAL STUDIO logo">
+                  <defs>
+                    <linearGradient id="g3_hero" x1="0" x2="1">
+                      <stop offset="0" stop-color="#005bea"/>
+                      <stop offset="1" stop-color="#0052cc"/>
+                    </linearGradient>
+                  </defs>
+                  <rect x="0" y="0" width="100" height="100" rx="16" fill="url(#g3_hero)"/>
+                  <text x="50" y="62" font-family="Segoe UI, Tahoma, Arial, sans-serif" font-weight="800" font-size="44" fill="#fff" text-anchor="middle">ADS</text>
+                  <text x="130" y="40" font-family="Segoe UI, Tahoma, Arial, sans-serif" font-weight="800" font-size="26" fill="#08112a">APNA DIGITAL</text>
+                  <text x="130" y="72" font-family="Segoe UI, Tahoma, Arial, sans-serif" font-weight="600" font-size="16" fill="#333">STUDIO — CSC VLE Narendra Kumar</text>
+                </svg>
+            </div>
             <div class="hero-logo-text">
                 <h2>APNA DIGITAL STUDIO</h2>
                 <p>CSC VLE - Narendra Kumar</p>
@@ -912,8 +946,8 @@
         <p class="tagline">एक ही जगह पर मिलेंगी</p>
         <p class="subtitle">Pratappur Block Road | Trusted Digital Services Provider</p>
         <div class="hero-buttons">
-            <a href="tel:7480949254" class="btn btn-primary">📞 Call Now</a>
-            <a href="https://wa.me/917480949254" target="_blank" class="btn btn-secondary">💬 WhatsApp</a>
+            <a href="tel:+917480949254" class="btn btn-primary">📞 Call Now</a>
+            <a href="https://wa.me/917480949254" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">💬 WhatsApp</a>
         </div>
     </div>
 </header>
@@ -981,6 +1015,7 @@
         <p class="section-subtitle">सभी आवश्यक digital सेवाएँ एक ही छत के नीचे</p>
         
         <div class="services-grid">
+            <!-- existing cards (kept) -->
             <div class="service-card">
                 <div class="service-icon">🪪</div>
                 <h3>Aadhaar Services</h3>
@@ -990,7 +1025,7 @@
                     <li>✓ Print Services</li>
                     <li>✓ Name/Address Correction</li>
                 </ul>
-                <a href="https://wa.me/917480949254?text=मुझे%20Aadhaar%20की%20सेवा%20चाहिए।" target="_blank" class="service-link">अधिक जानें →</a>
+                <a href="https://wa.me/917480949254?text=मुझे%20Aadhaar%20की%20सेवा%20चाहिए।" target="_blank" rel="noopener noreferrer" class="service-link">अधिक जानें →</a>
             </div>
 
             <div class="service-card">
@@ -1002,7 +1037,7 @@
                     <li>✓ Reissue Services</li>
                     <li>✓ Duplicate PAN</li>
                 </ul>
-                <a href="https://wa.me/917480949254?text=मुझे%20PAN%20की%20सेवा%20चाहिए।" target="_blank" class="service-link">अधिक जानें →</a>
+                <a href="https://wa.me/917480949254?text=मुझे%20PAN%20की%20सेवा%20चाहिए।" target="_blank" rel="noopener noreferrer" class="service-link">अधिक जानें →</a>
             </div>
 
             <div class="service-card">
@@ -1014,7 +1049,7 @@
                     <li>✓ Print Services</li>
                     <li>✓ Verification</li>
                 </ul>
-                <a href="https://wa.me/917480949254?text=मुझे%20Voter%20की%20सेवा%20चाहिए।" target="_blank" class="service-link">अधिक जानें →</a>
+                <a href="https://wa.me/917480949254?text=मुझे%20Voter%20की%20सेवा%20चाहिए।" target="_blank" rel="noopener noreferrer" class="service-link">अधिक जानें →</a>
             </div>
 
             <div class="service-card">
@@ -1026,7 +1061,7 @@
                     <li>✓ Job Portal Forms</li>
                     <li>✓ Help & Guidance</li>
                 </ul>
-                <a href="https://wa.me/917480949254?text=मुझे%20Online%20Form%20भरवाना%20है।" target="_blank" class="service-link">अधिक जानें →</a>
+                <a href="https://wa.me/917480949254?text=मुझे%20Online%20Form%20भरवाना%20है।" target="_blank" rel="noopener noreferrer" class="service-link">अधिक जानें →</a>
             </div>
 
             <div class="service-card">
@@ -1038,7 +1073,7 @@
                     <li>✓ Scanning Services</li>
                     <li>✓ Photocopying</li>
                 </ul>
-                <a href="https://wa.me/917480949254?text=मुझे%20Print%20सेवा%20चाहिए।" target="_blank" class="service-link">अधिक जानें →</a>
+                <a href="https://wa.me/917480949254?text=मुझे%20Print%20सेवा%20चाहिए।" target="_blank" rel="noopener noreferrer" class="service-link">अधिक जानें →</a>
             </div>
 
             <div class="service-card">
@@ -1050,7 +1085,7 @@
                     <li>✓ Internet Bills</li>
                     <li>✓ Insurance Payments</li>
                 </ul>
-                <a href="https://wa.me/917480949254?text=मुझे%20Bill%20Payment%20करवानी%20है।" target="_blank" class="service-link">अधिक जानें →</a>
+                <a href="https://wa.me/917480949254?text=मुझे%20Bill%20Payment%20करवानी%20है।" target="_blank" rel="noopener noreferrer" class="service-link">अधिक जानें →</a>
             </div>
 
             <div class="service-card">
@@ -1062,7 +1097,7 @@
                     <li>✓ Safe & Secure</li>
                     <li>✓ Multiple Options</li>
                 </ul>
-                <a href="https://wa.me/917480949254?text=मुझे%20Money%20Transfer%20करवानी%20है।" target="_blank" class="service-link">अधिक जानें →</a>
+                <a href="https://wa.me/917480949254?text=मुझे%20Money%20Transfer%20करवानी%20है।" target="_blank" rel="noopener noreferrer" class="service-link">अधिक जानें →</a>
             </div>
 
             <div class="service-card">
@@ -1074,7 +1109,7 @@
                     <li>✓ Data Packs</li>
                     <li>✓ Plans Available</li>
                 </ul>
-                <a href="https://wa.me/917480949254?text=मुझे%20Mobile%20Recharge%20करवाना%20है।" target="_blank" class="service-link">अधिक जानें →</a>
+                <a href="https://wa.me/917480949254?text=मुझे%20Mobile%20Recharge%20करवाना%20है।" target="_blank" rel="noopener noreferrer" class="service-link">अधिक जानें →</a>
             </div>
 
             <div class="service-card">
@@ -1086,8 +1121,342 @@
                     <li>✓ Certificates</li>
                     <li>✓ Online Processing</li>
                 </ul>
-                <a href="https://wa.me/917480949254?text=मुझे%20Government%20सेवा%20चाहिए।" target="_blank" class="service-link">अधिक जानें →</a>
+                <a href="https://wa.me/917480949254?text=मुझे%20Government%20सेवा%20चाहिए।" target="_blank" rel="noopener noreferrer" class="service-link">अधिक जानें →</a>
             </div>
+
+            <!-- NEW SERVICES ADDED AS REQUESTED -->
+            <div class="service-card">
+                <div class="service-icon">🌐</div>
+                <h3>Online service</h3>
+                <ul class="service-features">
+                    <li>✓ त्वरित ऑनलाइन सहायता</li>
+                    <li>✓ फॉर्म भरने में मदद</li>
+                    <li>✓ सिक्योर प्रोसेसिंग</li>
+                </ul>
+                <a href="https://wa.me/917480949254?text=मुझे%20Online%20service%20की%20जानकारी%20चाहिए।" target="_blank" rel="noopener noreferrer" class="service-link">अधिक जानें →</a>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">🚗</div>
+                <h3>Car decoration</h3>
+                <ul class="service-features">
+                    <li>✓ कार डेकोरेशन विकल्प</li>
+                    <li>✓ कस्टम सजावट</li>
+                    <li>✓ इवेंट‑विशेष पैकेज</li>
+                </ul>
+                <a href="https://wa.me/917480949254?text=मुझे%20Car%20decoration%20की%20जानकारी%20चाहिए।" target="_blank" rel="noopener noreferrer" class="service-link">अधिक जानें →</a>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">💌</div>
+                <h3>Sadi card</h3>
+                <ul class="service-features">
+                    <li>✓ कस्टम डिज़ाइन और प्रिंट</li>
+                    <li>✓ फोटो और टेक्स्ट विकल्प</li>
+                    <li>✓ त्वरित डिलीवरी</li>
+                </ul>
+                <a href="https://wa.me/917480949254?text=मुझे%20Sadi%20card%20बनवाना%20है।" target="_blank" rel="noopener noreferrer" class="service-link">अधिक जानें →</a>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">📱</div>
+                <h3>Mobile saman</h3>
+                <ul class="service-features">
+                    <li>✓ मोबाइल एसेसरीज़</li>
+                    <li>✓ कवर्स, ग्लास, चार्जर</li>
+                    <li>✓ वॉरंटी और सर्विस</li>
+                </ul>
+                <a href="https://wa.me/917480949254?text=मुझे%20Mobile%20saman%20की%20जानकारी%20चाहिए।" target="_blank" rel="noopener noreferrer" class="service-link">अधिक जानें →</a>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">🔌</div>
+                <h3>Electronic saman</h3>
+                <ul class="service-features">
+                    <li>✓ छोटे इलेक्ट्रॉनिक्स</li>
+                    <li>✓ टेस्टेड प्रोडक्ट्स</li>
+                    <li>✓ बजट‑फ्रेंडली विकल्प</li>
+                </ul>
+                <a href="https://wa.me/917480949254?text=मुझे%20Electronic%20saman%20की%20जानकारी%20चाहिए।" target="_blank" rel="noopener noreferrer" class="service-link">अधिक जानें →</a>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">🖼️</div>
+                <h3>Photo Frame & ID Card</h3>
+                <ul class="service-features">
+                    <li>✓ फोटो फ्रेम प्रिंट</li>
+                    <li>✓ ID कार्ड डिजाइन और प्रिंट</li>
+                    <li>✓ कस्टम साइज़ उपलब्ध</li>
+                </ul>
+                <a href="https://wa.me/917480949254?text=मुझे%20Photo%20Frame%20या%20ID%20Card%20चाहिए।" target="_blank" rel="noopener noreferrer" class="service-link">अधिक जानें →</a>
+            </div>
+
+            <!-- Certificates -->
+            <div class="service-card">
+                <div class="service-icon">🌀</div>
+                <h3>Caste Certificate</h3>
+                <ul class="service-features">
+                    <li>✓ सरकारी फॉर्म भरवाना</li>
+                    <li>✓ दस्तावेज़ चेक और सहायता</li>
+                    <li>✓ फॉलो‑अप सेवा</li>
+                </ul>
+                <a href="https://wa.me/917480949254?text=मुझे%20Caste%20Certificate%20चाहिए।" target="_blank" rel="noopener noreferrer" class="service-link">अधिक जानें →</a>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">🌀</div>
+                <h3>INCOME CERTIFICATE</h3>
+                <ul class="service-features">
+                    <li>✓ आय प्रमाण पत्र आवेदन</li>
+                    <li>✓ दस्तावेज़ तैयारी</li>
+                    <li>✓ त्वरित प्रोसेसिंग</li>
+                </ul>
+                <a href="https://wa.me/917480949254?text=मुझे%20Income%20Certificate%20चाहिए।" target="_blank" rel="noopener noreferrer" class="service-link">अधिक जानें →</a>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">🌀</div>
+                <h3>RESIDENTIAL CERTIFICATE</h3>
+                <ul class="service-features">
+                    <li>✓ निवास प्रमाण पत्र</li>
+                    <li>✓ दस्तावेज़ गाइड</li>
+                    <li>✓ सबमिशन सहायता</li>
+                </ul>
+                <a href="https://wa.me/917480949254?text=मुझे%20Residential%20Certificate%20चाहिए।" target="_blank" rel="noopener noreferrer" class="service-link">अधिक जानें →</a>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">🌀</div>
+                <h3>OBC CERTIFICATE</h3>
+                <ul class="service-features">
+                    <li>✓ OBC प्रमाण पत्र सहायता</li>
+                    <li>✓ फॉर्म भरना और जाँच</li>
+                    <li>✓ फॉलो‑अप</li>
+                </ul>
+                <a href="https://wa.me/917480949254?text=मुझे%20OBC%20Certificate%20चाहिए।" target="_blank" rel="noopener noreferrer" class="service-link">अधिक जानें →</a>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">🌀</div>
+                <h3>NCL CERTIFICATE</h3>
+                <ul class="service-features">
+                    <li>✓ NCL प्रमाण पत्र मदद</li>
+                    <li>✓ फॉर्मिंग और सबमिशन</li>
+                    <li>✓ शीघ्र सेवा</li>
+                </ul>
+                <a href="https://wa.me/917480949254?text=मुझे%20NCL%20Certificate%20चाहिए।" target="_blank" rel="noopener noreferrer" class="service-link">अधिक जानें →</a>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">🌀</div>
+                <h3>EWS CERTIFICATE</h3>
+                <ul class="service-features">
+                    <li>✓ EWS प्रमाण पत्र</li>
+                    <li>✓ दस्तावेज़ गाइड</li>
+                    <li>✓ त्वरित प्रोसेस</li>
+                </ul>
+                <a href="https://wa.me/917480949254?text=मुझे%20EWS%20Certificate%20चाहिए।" target="_blank" rel="noopener noreferrer" class="service-link">अधिक जानें →</a>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">🌀</div>
+                <h3>Experience CERTIFICATE</h3>
+                <ul class="service-features">
+                    <li>✓ अनुभव प्रमाण पत्र</li>
+                    <li>✓ टेम्पलेट और प्रिंट</li>
+                    <li>✓ तेज़ सेवा</li>
+                </ul>
+                <a href="https://wa.me/917480949254?text=मुझे%20Experience%20Certificate%20चाहिए।" target="_blank" rel="noopener noreferrer" class="service-link">अधिक जानें →</a>
+            </div>
+
+            <!-- Govt forms & PAN/DL/Voter etc. -->
+            <div class="service-card">
+                <div class="service-icon">🌀</div>
+                <h3>GOVERNMENT FORMS ONLINE</h3>
+                <ul class="service-features">
+                    <li>✓ सभी सरकारी फॉर्म्स भरना</li>
+                    <li>✓ अपलोड और सबमिशन</li>
+                    <li>✓ फॉलो‑अप सेवाएँ</li>
+                </ul>
+                <a href="https://wa.me/917480949254?text=मुझे%20Government%20Forms%20Online%20की%20सहायता%20चाहिए।" target="_blank" rel="noopener noreferrer" class="service-link">अधिक जानें →</a>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">🔎</div>
+                <h3>PAN NUMBER FIND</h3>
+                <ul class="service-features">
+                    <li>✓ PAN नंबर खोजना</li>
+                    <li>✓ विवरण उपलब्ध कराना</li>
+                    <li>✓ सुरक्षित प्रोसेस</li>
+                </ul>
+                <a href="https://wa.me/917480949254?text=मुझे%20PAN%20Number%20Find%20करना%20है।" target="_blank" rel="noopener noreferrer" class="service-link">अधिक जानें →</a>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">📄</div>
+                <h3>DL PDF</h3>
+                <ul class="service-features">
+                    <li>✓ ड्राइविंग लाइसेंस PDF</li>
+                    <li>✓ प्रिंट और सेव</li>
+                    <li>✓ राज्य‑वार सहायता</li>
+                </ul>
+                <a href="https://wa.me/917480949254?text=मुझे%20DL%20PDF%20चाहिए।" target="_blank" rel="noopener noreferrer" class="service-link">अधिक जानें →</a>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">📝</div>
+                <h3>DL LEARNING EXAM</h3>
+                <ul class="service-features">
+                    <li>✓ लर्निंग टेस्ट गाइड</li>
+                    <li>✓ प्रैक्टिस प्रश्न</li>
+                    <li>✓ रजिस्ट्रेशन सहायता</li>
+                </ul>
+                <a href="https://wa.me/917480949254?text=मुझे%20DL%20Learning%20Exam%20गाइड%20चाहिए।" target="_blank" rel="noopener noreferrer" class="service-link">अधिक जानें →</a>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">📁</div>
+                <h3>RC PDF ALL STATE</h3>
+                <ul class="service-features">
+                    <li>✓ RC PDF निकालना</li>
+                    <li>✓ वाहन विवरण</li>
+                    <li>✓ प्रिंट सहायता</li>
+                </ul>
+                <a href="https://wa.me/917480949254?text=मुझे%20RC%20PDF%20चाहिए।" target="_blank" rel="noopener noreferrer" class="service-link">अधिक जानें →</a>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">📲</div>
+                <h3>MOBILE NO TO DL DETAILS</h3>
+                <ul class="service-features">
+                    <li>✓ मोबाइल से DL विवरण</li>
+                    <li>✓ खोज और वेरिफिकेशन</li>
+                    <li>✓ तेज़ रिजल्ट</li>
+                </ul>
+                <a href="https://wa.me/917480949254?text=मुझे%20Mobile%20No%20to%20DL%20Details%20चाहिए।" target="_blank" rel="noopener noreferrer" class="service-link">अधिक जानें →</a>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">📄</div>
+                <h3>RASANN PDF</h3>
+                <ul class="service-features">
+                    <li>✓ राशन/राशन कार्ड PDF</li>
+                    <li>✓ दस्तावेज़ मदद</li>
+                    <li>✓ प्रिंट/डिलीवरी</li>
+                </ul>
+                <a href="https://wa.me/917480949254?text=मुझे%20RASANN%20PDF%20चाहिए।" target="_blank" rel="noopener noreferrer" class="service-link">अधिक जानें →</a>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">📄</div>
+                <h3>AADHAR NO TO RASAN PDF</h3>
+                <ul class="service-features">
+                    <li>✓ Aadhaar से राशन PDF</li>
+                    <li>✓ डाटा लिंकिंग</li>
+                    <li>✓ प्रिंट सहायता</li>
+                </ul>
+                <a href="https://wa.me/917480949254?text=मुझे%20Aadhar%20to%20RASAN%20PDF%20चाहिए।" target="_blank" rel="noopener noreferrer" class="service-link">अधिक जानें →</a>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">🔎</div>
+                <h3>DL NUMBER FIND</h3>
+                <ul class="service-features">
+                    <li>✓ DL नंबर खोजें</li>
+                    <li>✓ सत्यापन</li>
+                    <li>✓ सुरक्षित प्रोसेस</li>
+                </ul>
+                <a href="https://wa.me/917480949254?text=मुझे%20DL%20Number%20Find%20करना%20है।" target="_blank" rel="noopener noreferrer" class="service-link">अधिक जानें →</a>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">🆕</div>
+                <h3>NEW PAN APPLY</h3>
+                <ul class="service-features">
+                    <li>✓ नया PAN आवेदन</li>
+                    <li>✓ फॉर्म भरना और सबमिट</li>
+                    <li>✓ स्टेटस ट्रैकिंग</li>
+                </ul>
+                <a href="https://wa.me/917480949254?text=मुझे%20New%20PAN%20Apply%20करना%20है।" target="_blank" rel="noopener noreferrer" class="service-link">अधिक जानें →</a>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">✏️</div>
+                <h3>PAN CARD CORRECTION</h3>
+                <ul class="service-features">
+                    <li>✓ नाम/पता सुधार</li>
+                    <li>✓ दस्तावेज़ गाइड</li>
+                    <li>✓ फॉलो‑अप</li>
+                </ul>
+                <a href="https://wa.me/917480949254?text=मुझे%20PAN%20Card%20Correction%20करवानी%20है।" target="_blank" rel="noopener noreferrer" class="service-link">अधिक जानें →</a>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">🔎</div>
+                <h3>PAN NO TO PAN DETAILS</h3>
+                <ul class="service-features">
+                    <li>✓ PAN से विवरण निकालना</li>
+                    <li>✓ तुरंत जानकारी</li>
+                    <li>✓ प्राइवेसी सुरक्षित</li>
+                </ul>
+                <a href="https://wa.me/917480949254?text=मुझे%20PAN%20No%20to%20PAN%20Details%20चाहिए।" target="_blank" rel="noopener noreferrer" class="service-link">अधिक जानें →</a>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">🗳️</div>
+                <h3>VOTER PDF ORIGINAL</h3>
+                <ul class="service-features">
+                    <li>✓ वोटर PDF सेवाएँ</li>
+                    <li>✓ मूल प्रमाण‑पत्र</li>
+                    <li>✓ प्रिंट सहायता</li>
+                </ul>
+                <a href="https://wa.me/917480949254?text=मुझे%20Voter%20PDF%20Original%20चाहिए।" target="_blank" rel="noopener noreferrer" class="service-link">अधिक जानें →</a>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">🔗</div>
+                <h3>VOTER MOB LINK</h3>
+                <ul class="service-features">
+                    <li>✓ वोटर मोबाइल लिंक</li>
+                    <li>✓ संपर्क अपडेट</li>
+                    <li>✓ वेरिफिकेशन</li>
+                </ul>
+                <a href="https://wa.me/917480949254?text=मुझे%20Voter%20Mob%20Link%20चाहिए।" target="_blank" rel="noopener noreferrer" class="service-link">अधिक जानें →</a>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">🆕</div>
+                <h3>NEW VOTER APPLY</h3>
+                <ul class="service-features">
+                    <li>✓ नया वोटर आवेदन</li>
+                    <li>✓ फॉर्म भरने में मदद</li>
+                    <li>✓ स्टेटस ट्रैक</li>
+                </ul>
+                <a href="https://wa.me/917480949254?text=मुझे%20New%20Voter%20Apply%20करना%20है।" target="_blank" rel="noopener noreferrer" class="service-link">अधिक जानें →</a>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">🦠</div>
+                <h3>COVID CERTIFICATE</h3>
+                <ul class="service-features">
+                    <li>✓ COVID सर्टिफिकेट डाउनलोड</li>
+                    <li>✓ डिजिटल कॉपी और प्रिंट</li>
+                    <li>✓ रैपिड सहायता</li>
+                </ul>
+                <a href="https://wa.me/917480949254?text=मुझे%20COVID%20Certificate%20चाहिए।" target="_blank" rel="noopener noreferrer" class="service-link">अधिक जानें →</a>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">📦</div>
+                <h3>BATCH & WITHOUT BATCH</h3>
+                <ul class="service-features">
+                    <li>✓ बैच / बिना बैच सेवाएँ</li>
+                    <li>✓ दस्तावेज़ प्रोसेसिंग</li>
+                    <li>✓ फॉलो‑अप सपोर्ट</li>
+                </ul>
+                <a href="https://wa.me/917480949254?text=मुझे%20Batch%20और%20Without%20Batch%20सेवा%20चाहिए।" target="_blank" rel="noopener noreferrer" class="service-link">अधिक जानें →</a>
+            </div>
+
         </div>
     </div>
 </section>
@@ -1157,8 +1526,8 @@
                 <p class="team-title">Founder & CSC VLE</p>
                 <p class="team-description">5+ years का experience digital services में। हमेशा ग्राहक संतुष्टि को प्राथमिकता देते हैं।</p>
                 <div class="team-contact">
-                    <a href="tel:7480949254" title="Call"><i class="fas fa-phone"></i></a>
-                    <a href="https://wa.me/917480949254" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    <a href="tel:+917480949254" title="Call"><i class="fas fa-phone"></i></a>
+                    <a href="https://wa.me/917480949254" target="_blank" rel="noopener noreferrer" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
                 </div>
             </div>
         </div>
@@ -1293,7 +1662,7 @@
                 <div class="info-box">
                     <i class="fas fa-phone"></i>
                     <h4>Phone</h4>
-                    <p><a href="tel:7480949254">7480949254</a></p>
+                    <p><a href="tel:+917480949254">+91 74809 49254</a></p>
                 </div>
 
                 <div class="info-box">
@@ -1309,10 +1678,10 @@
                 </div>
 
                 <div class="social-links">
-                    <a href="https://wa.me/917480949254" target="_blank" title="WhatsApp">
+                    <a href="https://wa.me/917480949254" target="_blank" rel="noopener noreferrer" title="WhatsApp">
                         <i class="fab fa-whatsapp"></i>
                     </a>
-                    <a href="tel:7480949254" title="Call">
+                    <a href="tel:+917480949254" title="Call">
                         <i class="fas fa-phone"></i>
                     </a>
                     <a href="mailto:nk125691256@gmail.com" title="Email">
@@ -1337,7 +1706,7 @@
                     </div>
 
                     <div class="form-group">
-                        <select id="service" name="service" required>
+                        <select id="service" name="service" required> 
                             <option value="">सेवा चुनें</option>
                             <option value="aadhaar">Aadhaar Services</option>
                             <option value="pan">PAN Card Services</option>
@@ -1375,8 +1744,8 @@
         <h2>आज ही शुरु करें</h2>
         <p>अभी call करें या WhatsApp करें और अपनी समस्या का तुरंत समाधान पाएं</p>
         <div class="cta-buttons">
-            <a href="tel:7480949254" class="btn btn-primary btn-lg">📞 Call Now</a>
-            <a href="https://wa.me/917480949254" target="_blank" class="btn btn-secondary btn-lg">💬 WhatsApp Message</a>
+            <a href="tel:+917480949254" class="btn btn-primary btn-lg">📞 Call Now</a>
+            <a href="https://wa.me/917480949254" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-lg">💬 WhatsApp Message</a>
         </div>
     </div>
 </section>
@@ -1412,7 +1781,7 @@
 
             <div class="footer-section">
                 <h4>Contact</h4>
-                <p><strong>Phone:</strong> <a href="tel:7480949254">7480949254</a></p>
+                <p><strong>Phone:</strong> <a href="tel:+917480949254">+91 74809 49254</a></p>
                 <p><strong>Email:</strong> <a href="mailto:nk125691256@gmail.com">nk125691256@gmail.com</a></p>
                 <p><strong>Location:</strong> Pratappur Block Road, Pratappur</p>
             </div>
@@ -1445,7 +1814,7 @@ document.querySelectorAll('.faq-header').forEach(header => {
     });
 });
 
-// Contact Form
+// Contact Form (client-only feedback)
 const contactForm = document.getElementById('contactForm');
 if (contactForm) {
     contactForm.addEventListener('submit', function(e) {
