@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>APNA DIGITAL STUDIO - CSC VLE Narendra Kumar | Digital Services</title>
-    <meta name="description" content="APNA DIGITAL STUDIO - आपकी सभी डिजिटल सेवाएँ एक ही जगह। Aadhaar, PAN, Online Forms, Bill Payment और भ...">
+    <meta name="description" content="APNA DIGITAL STUDIO - आपकी सभी डिजिटल सेवाएँ एक ही जगह। Aadhaar, PAN, Online Forms, Bill Payment और भी बहुत कुछ।">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         * {
@@ -26,11 +26,64 @@
             padding: 0 20px;
         }
 
+        /* Logo Styles */
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            text-decoration: none;
+            color: white;
+            font-weight: 700;
+            font-size: 1.4rem;
+            transition: all 0.3s ease;
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+        }
+
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #ffd700, #ffed4e);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            box-shadow: 0 4px 12px rgba(255, 215, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .logo:hover .logo-icon {
+            box-shadow: 0 6px 20px rgba(255, 215, 0, 0.5);
+            transform: rotate(-5deg);
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.2;
+        }
+
+        .logo-text-main {
+            font-size: 1.3rem;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+        }
+
+        .logo-text-sub {
+            font-size: 0.7rem;
+            opacity: 0.9;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
         /* Navigation */
         .navbar {
             background: linear-gradient(135deg, #005bea, #0052cc);
             color: white;
-            padding: 1rem 0;
+            padding: 0.8rem 0;
             position: sticky;
             top: 0;
             z-index: 100;
@@ -41,26 +94,12 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            flex-wrap: wrap;
-            gap: 1rem;
-        }
-
-        .navbar-brand {
-            font-size: 1.5rem;
-            font-weight: bold;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            white-space: nowrap;
         }
 
         .nav-menu {
             display: flex;
             list-style: none;
-            gap: 1.5rem;
-            flex-wrap: wrap;
-            flex: 1;
-            justify-content: flex-end;
+            gap: 2rem;
         }
 
         .nav-menu a {
@@ -68,7 +107,6 @@
             text-decoration: none;
             transition: color 0.3s;
             font-weight: 500;
-            font-size: 0.95rem;
         }
 
         .nav-menu a:hover {
@@ -81,6 +119,49 @@
             color: white;
             padding: 80px 20px;
             text-align: center;
+        }
+
+        .hero-logo {
+            display: inline-flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            padding: 1rem 2rem;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .hero-logo-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, #ffd700, #ffed4e);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            box-shadow: 0 6px 20px rgba(255, 215, 0, 0.4);
+        }
+
+        .hero-logo-text {
+            text-align: left;
+        }
+
+        .hero-logo-text h2 {
+            font-size: 1.8rem;
+            margin: 0;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+        }
+
+        .hero-logo-text p {
+            font-size: 0.85rem;
+            opacity: 0.95;
+            margin: 0;
+            letter-spacing: 1px;
+            text-transform: uppercase;
         }
 
         .hero h1 {
@@ -734,18 +815,9 @@
                 font-size: 2rem;
             }
 
-            .navbar .container {
-                flex-direction: column;
-                gap: 0.5rem;
-            }
-
             .nav-menu {
-                width: 100%;
                 gap: 1rem;
-                font-size: 0.85rem;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
+                font-size: 0.9rem;
             }
 
             .about-content,
@@ -765,15 +837,15 @@
             .section-title {
                 font-size: 2rem;
             }
+
+            .hero-logo {
+                flex-direction: column;
+            }
         }
 
         @media (max-width: 480px) {
             .hero h1 {
                 font-size: 1.5rem;
-            }
-
-            .navbar-brand {
-                font-size: 1.2rem;
             }
 
             .hero-buttons,
@@ -789,6 +861,14 @@
             .faq-grid {
                 grid-template-columns: 1fr;
             }
+
+            .logo-text-main {
+                font-size: 1rem;
+            }
+
+            .logo-text-sub {
+                font-size: 0.6rem;
+            }
         }
     </style>
 </head>
@@ -797,9 +877,15 @@
 <!-- Navigation Bar -->
 <nav class="navbar">
     <div class="container">
-        <div class="navbar-brand">
-            <i class="fas fa-laptop"></i> APNA DIGITAL STUDIO
-        </div>
+        <a href="#home" class="logo">
+            <div class="logo-icon">
+                🏢
+            </div>
+            <div class="logo-text">
+                <div class="logo-text-main">ADS</div>
+                <div class="logo-text-sub">Digital Studio</div>
+            </div>
+        </a>
         <ul class="nav-menu">
             <li><a href="#home">Home</a></li>
             <li><a href="#services">Services</a></li>
@@ -815,9 +901,16 @@
 <!-- Hero Section -->
 <header id="home" class="hero">
     <div class="container">
-        <h1>APNA DIGITAL STUDIO</h1>
-        <p class="tagline">आपकी सभी डिजिटल सेवाएँ एक ही जगह</p>
-        <p class="subtitle">CSC VLE - Narendra Kumar | Pratappur Block Road</p>
+        <div class="hero-logo">
+            <div class="hero-logo-icon">🏢</div>
+            <div class="hero-logo-text">
+                <h2>APNA DIGITAL STUDIO</h2>
+                <p>CSC VLE - Narendra Kumar</p>
+            </div>
+        </div>
+        <h1>आपकी सभी डिजिटल सेवाएँ</h1>
+        <p class="tagline">एक ही जगह पर मिलेंगी</p>
+        <p class="subtitle">Pratappur Block Road | Trusted Digital Services Provider</p>
         <div class="hero-buttons">
             <a href="tel:7480949254" class="btn btn-primary">📞 Call Now</a>
             <a href="https://wa.me/917480949254" target="_blank" class="btn btn-secondary">💬 WhatsApp</a>
@@ -831,7 +924,7 @@
         <div class="about-content">
             <div class="about-text">
                 <h2>हमारे बारे में</h2>
-                <p>APNA DIGITAL STUDIO एक trusted CSC (Common Service Centre) है जो Pratappur में स्थित है। हम सभी प्रकार की digital सेवाएँ प्रदान करते हैं।</p>
+                <p>APNA DIGITAL STUDIO एक trusted CSC (Common Service Centre) है जो Pratappur में स्थित है। हम सभी प्रकार की digital और online सेवाएँ प्रदान करते हैं।</p>
                 <div class="about-stats">
                     <div class="stat">
                         <h3>500+</h3>
@@ -1018,28 +1111,8 @@
 
             <div class="portfolio-card">
                 <div class="portfolio-number">300+</div>
-                <h3>PAN Card Services</h3>
-                <p>Pan applications filed और certificates issued</p>
-                <div class="portfolio-rating">
-                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                    <span>4.9/5</span>
-                </div>
-            </div>
-
-            <div class="portfolio-card">
-                <div class="portfolio-number">250+</div>
-                <h3>Voter Registration</h3>
-                <p>Voter IDs successfully enrolled और updated</p>
-                <div class="portfolio-rating">
-                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                    <span>4.95/5</span>
-                </div>
-            </div>
-
-            <div class="portfolio-card">
-                <div class="portfolio-number">400+</div>
-                <h3>Online Forms</h3>
-                <p>Government forms successfully submitted</p>
+                <h3>PAN Card Processing</h3>
+                <p>New applications और corrections with 99.5% success rate</p>
                 <div class="portfolio-rating">
                     <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                     <span>5.0/5</span>
@@ -1047,19 +1120,19 @@
             </div>
 
             <div class="portfolio-card">
-                <div class="portfolio-number">1000+</div>
-                <h3>Documents Printed</h3>
-                <p>Printing और scanning services completed</p>
+                <div class="portfolio-number">200+</div>
+                <h3>Voter Registration</h3>
+                <p>Youth को voter ID के लिए registration में मदद की</p>
                 <div class="portfolio-rating">
-                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                    <span>4.9/5</span>
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half"></i>
+                    <span>4.8/5</span>
                 </div>
             </div>
 
             <div class="portfolio-card">
-                <div class="portfolio-number">₹50L+</div>
-                <h3>Money Transferred</h3>
-                <p>Safe और secure money transfers processed</p>
+                <div class="portfolio-number">1000+</div>
+                <h3>Online Forms</h3>
+                <p>Successfully filled और submitted government forms</p>
                 <div class="portfolio-rating">
                     <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                     <span>5.0/5</span>
@@ -1072,37 +1145,17 @@
 <!-- Team Section -->
 <section id="team" class="team-section">
     <div class="container">
-        <h2 class="section-title">हमारी टीम</h2>
-        <p class="section-subtitle">अनुभवी पेशेवरों की dedicated team</p>
+        <h2 class="section-title">हमारी Team</h2>
+        <p class="section-subtitle">Experienced professionals आपकी सेवा के लिए</p>
         
         <div class="team-grid">
             <div class="team-card">
-                <div class="team-image">👨‍💼</div>
+                <div class="team-image">
+                    <i class="fas fa-user-circle"></i>
+                </div>
                 <h3>Narendra Kumar</h3>
-                <p class="team-title">CSC VLE & Founder</p>
-                <p class="team-description">15+ Years experience in digital services और customer support</p>
-                <div class="team-contact">
-                    <a href="tel:7480949254" title="Call"><i class="fas fa-phone"></i></a>
-                    <a href="https://wa.me/917480949254" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-                </div>
-            </div>
-
-            <div class="team-card">
-                <div class="team-image">👨‍💻</div>
-                <h3>Technical Support</h3>
-                <p class="team-title">IT Specialist</p>
-                <p class="team-description">Handling सभी online forms, applications और technical issues</p>
-                <div class="team-contact">
-                    <a href="tel:7480949254" title="Call"><i class="fas fa-phone"></i></a>
-                    <a href="https://wa.me/917480949254" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-                </div>
-            </div>
-
-            <div class="team-card">
-                <div class="team-image">👨‍🔧</div>
-                <h3>Customer Service</h3>
-                <p class="team-title">Service Executive</p>
-                <p class="team-description">24/7 support और assistance सभी services के लिए</p>
+                <p class="team-title">Founder & CSC VLE</p>
+                <p class="team-description">5+ years का experience digital services में। हमेशा ग्राहक संतुष्टि को प्राथमिकता देते हैं।</p>
                 <div class="team-contact">
                     <a href="tel:7480949254" title="Call"><i class="fas fa-phone"></i></a>
                     <a href="https://wa.me/917480949254" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
@@ -1115,56 +1168,40 @@
 <!-- Testimonials Section -->
 <section id="testimonials" class="testimonials-section">
     <div class="container">
-        <h2 class="section-title">ग्राहक समीक्षा</h2>
-        <p class="section-subtitle">हमारे संतुष्ट ग्राहकों के विचार</p>
+        <h2 class="section-title">ग्राहक समीक्षाएं</h2>
+        <p class="section-subtitle">हमारे clients क्या कहते हैं</p>
         
         <div class="testimonials-grid">
             <div class="testimonial-card">
                 <div class="testimonial-rating">
                     <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                 </div>
-                <p class="testimonial-text">"बहुत अच्छी सेवा मिली। Aadhaar update करवाने में बहुत helpful रहे सभी लोग।"</p>
-                <p class="testimonial-author">- राज कुमार</p>
+                <p class="testimonial-text">"बहुत अच्छी सेवा! Aadhaar आवेदन को बहुत आसानी से पूरा किया। Narendra बहुत helpful हैं।"</p>
+                <p class="testimonial-author">- Rajesh Kumar, Pratappur</p>
             </div>
 
             <div class="testimonial-card">
                 <div class="testimonial-rating">
                     <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                 </div>
-                <p class="testimonial-text">"PAN card बनवाना बहुत आसान रहा। सभी documents quickly तैयार हो गए।"</p>
-                <p class="testimonial-author">- प्रिया शर्मा</p>
+                <p class="testimonial-text">"PAN Card application में मुझे पूरी guidance मिली। बहुत professional और fast service।"</p>
+                <p class="testimonial-author">- Priya Singh, Pratappur</p>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-rating">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half"></i>
+                </div>
+                <p class="testimonial-text">"Online forms भरवाने में मदद दी। बहुत अच्छे rates और honest service।"</p>
+                <p class="testimonial-author">- Arun Patel, Pratappur</p>
             </div>
 
             <div class="testimonial-card">
                 <div class="testimonial-rating">
                     <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                 </div>
-                <p class="testimonial-text">"Money transfer करवाना बहुत सुरक्षित और तेज रहा। ढेर सारे धन्यवाद!"</p>
-                <p class="testimonial-author">- विजय पटेल</p>
-            </div>
-
-            <div class="testimonial-card">
-                <div class="testimonial-rating">
-                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                </div>
-                <p class="testimonial-text">"Online forms भरने में बहुत मदद की। समझा भी दिए कि क्या करना है।"</p>
-                <p class="testimonial-author">- अंजलि वर्मा</p>
-            </div>
-
-            <div class="testimonial-card">
-                <div class="testimonial-rating">
-                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                </div>
-                <p class="testimonial-text">"Print और scanning की सेवा excellent है। कोई भी problem नहीं।"</p>
-                <p class="testimonial-author">- मोहन सिंह</p>
-            </div>
-
-            <div class="testimonial-card">
-                <div class="testimonial-rating">
-                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                </div>
-                <p class="testimonial-text">"सभी digital services ���क जगह मिलीं। यह जगह बहुत बेहतरीन है।"</p>
-                <p class="testimonial-author">- सीता देवी</p>
+                <p class="testimonial-text">"Voter ID registration बहुत आसान हो गई। समय पर काम पूरा हो गया।"</p>
+                <p class="testimonial-author">- Meera Devi, Pratappur</p>
             </div>
         </div>
     </div>
@@ -1173,67 +1210,67 @@
 <!-- FAQ Section -->
 <section id="faq" class="faq-section">
     <div class="container">
-        <h2 class="section-title">अक्सर पूछे जाने वाले सवाल</h2>
-        <p class="section-subtitle">सभी common questions के जवाब यहाँ मिलेंगे</p>
+        <h2 class="section-title">अक्सर पूछे जाने वाले प्रश्न</h2>
+        <p class="section-subtitle">आपके सवालों के जवाब</p>
         
         <div class="faq-grid">
             <div class="faq-item">
                 <div class="faq-header">
-                    <h4>Aadhaar Services कहाँ उपलब्ध हैं?</h4>
+                    <h4>Aadhaar enrollment के लिए क्या documents चाहिए?</h4>
                     <i class="fas fa-chevron-down"></i>
                 </div>
                 <div class="faq-content">
-                    <p>हमारे APNA DIGITAL STUDIO में आप Aadhaar enrollment, update, print और सभी अन्य services पा सकते हैं। यह सेवा सोमवार से शनिवार सुबह 9 बजे से रात 8 बजे तक उपलब्ध है।</p>
+                    <p>Aadhaar enrollment के लिए आपको valid identity proof (जैसे PAN, Voter ID) और address proof (जैसे electricity bill) की आवश्यकता होती है। हम आपको पूरी process में guide करेंगे।</p>
                 </div>
             </div>
 
             <div class="faq-item">
                 <div class="faq-header">
-                    <h4>PAN Card बनवाने में कितना समय लगता है?</h4>
+                    <h4>PAN Card के लिए कितना समय लगता है?</h4>
                     <i class="fas fa-chevron-down"></i>
                 </div>
                 <div class="faq-content">
-                    <p>PAN card online फाइल करने में 15-20 मिनट लगते हैं। आपका certificate 4-5 दिनों में आ जाएगा। हम आपको SMS के माध्यम से update देंगे।</p>
+                    <p>आमतौर पर PAN Card application को process होने में 3-5 दिन लगते हैं। हम आपको digital format में तुरंत provide कर देते हैं।</p>
                 </div>
             </div>
 
             <div class="faq-item">
                 <div class="faq-header">
-                    <h4>क्या आप Mobile Recharge सुविधा देते हैं?</h4>
+                    <h4>क्या आप online forms भरने में मदद कर सकते हैं?</h4>
                     <i class="fas fa-chevron-down"></i>
                 </div>
                 <div class="faq-content">
-                    <p>हाँ, हम सभी networks (Jio, Airtel, Vodafone, BSNL आदि) के लिए mobile recharge, DTH recharge और data packs उपलब्ध करवाते हैं।</p>
+                    <p>हाँ! हम सभी प्रकार के government, educational, और job portal forms भरने में complete assistance provide करते हैं।</p>
                 </div>
             </div>
 
             <div class="faq-item">
                 <div class="faq-header">
-                    <h4>Money Transfer की सुविधा कितनी safe है?</h4>
+                    <h4>आपकी bill payment service कितनी safe है?</h4>
                     <i class="fas fa-chevron-down"></i>
                 </div>
                 <div class="faq-content">
-                    <p>हमारे money transfer सभी secure channels से होते हैं। हम SBI, ICICI, HDFC जैसे major banks और authorized money transfer operators का use करते हैं।</p>
+                    <p>हमारी bill payment service completely secure है। हम official government channels के through सभी payments process करते हैं। आपको payment receipt भी मिलता है।</p>
                 </div>
             </div>
 
             <div class="faq-item">
                 <div class="faq-header">
-                    <h4>Online Forms भरने के लिए क्या documents चाहिए?</h4>
+                    <h4>क्या weekend पर भी services available हैं?</h4>
                     <i class="fas fa-chevron-down"></i>
                 </div>
                 <div class="faq-content">
-                    <p>Documents form के प्रकार पर निर्भर करते हैं। Generally Aadhaar, PAN, address proof, ID proof आदि चाहिए होते हैं। आप आकर पूछ सकते हैं।</p>
+                    <p>हाँ, हम Monday से Saturday खुले रहते हैं। Emergency के लिए आप WhatsApp या call के through contact कर सकते हैं।</p>
                 </div>
             </div>
 
             <div class="faq-item">
                 <div class="faq-header">
-                    <h4>क्या आप Voter ID बनवाने में मदद करते हैं?</h4>
+                    <h4>क्या Voter ID के लिए कोई age limit है?</h4>
                     <i class="fas fa-chevron-down"></i>
                 </div>
                 <div class="faq-content">
-                    <p>हाँ, हम voter registration, name update, address update और voter ID print services प्रदान करते हैं। 18 साल से ऊपर कोई भी person voter ID के लिए आवेदन कर सकता है।</p>
+                    <p>Voter ID के लिए minimum age 18 years होनी चाहिए। बाकी सभी नागरिक voter ID के लिए eligible हैं। हम सभी प्रकार की assistance देते हैं।</p>
                 </div>
             </div>
         </div>
@@ -1243,87 +1280,91 @@
 <!-- Contact Section -->
 <section id="contact" class="contact-section">
     <div class="container">
-        <h2 class="section-title">संपर्क करें</h2>
-        <p class="section-subtitle">हमसे तुरंत संपर्क करें आपकी समस्या का समाधान के लिए</p>
+        <h2 class="section-title">हमसे संपर्क करें</h2>
         
         <div class="contact-wrapper">
             <div class="contact-info">
                 <div class="info-box">
-                    <i class="fas fa-phone"></i>
-                    <h4>फोन नंबर</h4>
-                    <p><a href="tel:7480949254">7480949254</a></p>
-                    <p><small>सोमवार से शनिवार: 9 AM - 8 PM</small></p>
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h4>Address</h4>
+                    <p>Block Road, Pratappur<br>Pratappur, Jharkhand</p>
                 </div>
 
                 <div class="info-box">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <h4>पता</h4>
-                    <p>APNA DIGITAL STUDIO<br>
-                    Pratappur Block Road<br>
-                    Pratappur, Bihar</p>
+                    <i class="fas fa-phone"></i>
+                    <h4>Phone</h4>
+                    <p><a href="tel:7480949254">7480949254</a></p>
                 </div>
 
                 <div class="info-box">
                     <i class="fas fa-envelope"></i>
-                    <h4>ईमेल</h4>
-                    <p><a href="mailto:apnadigitalstudio@gmail.com">apnadigitalstudio@gmail.com</a></p>
+                    <h4>Email</h4>
+                    <p><a href="mailto:nk125691256@gmail.com">nk125691256@gmail.com</a></p>
                 </div>
 
                 <div class="info-box">
                     <i class="fas fa-clock"></i>
-                    <h4>कार्य समय</h4>
-                    <p>सोमवार - शनिवार: 9:00 AM - 8:00 PM<br>
-                    रविवार: बंद</p>
+                    <h4>Timing</h4>
+                    <p>Monday - Saturday<br>9:00 AM - 6:00 PM</p>
                 </div>
 
-                <div class="info-box">
-                    <i class="fas fa-share-alt"></i>
-                    <h4>सोशल मीडिया</h4>
-                    <div class="social-links">
-                        <a href="https://wa.me/917480949254" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-                        <a href="tel:7480949254" title="Call"><i class="fas fa-phone"></i></a>
-                    </div>
+                <div class="social-links">
+                    <a href="https://wa.me/917480949254" target="_blank" title="WhatsApp">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                    <a href="tel:7480949254" title="Call">
+                        <i class="fas fa-phone"></i>
+                    </a>
+                    <a href="mailto:nk125691256@gmail.com" title="Email">
+                        <i class="fas fa-envelope"></i>
+                    </a>
                 </div>
             </div>
 
             <div class="contact-form-box">
-                <h3>हमें संदेश भेजें</h3>
-                <form id="contactForm">
+                <h3>अपना संदेश भेजें</h3>
+                <form id="contactForm" class="contact-form">
                     <div class="form-group">
-                        <input type="text" placeholder="आपका नाम" required>
+                        <input type="text" id="name" name="name" placeholder="आपका नाम" required>
                     </div>
+
                     <div class="form-group">
-                        <input type="email" placeholder="आपका ईमेल" required>
+                        <input type="email" id="email" name="email" placeholder="Email Address" required>
                     </div>
+
                     <div class="form-group">
-                        <input type="tel" placeholder="आपका फोन नंबर" required>
+                        <input type="tel" id="phone" name="phone" placeholder="Phone Number" required>
                     </div>
+
                     <div class="form-group">
-                        <select required>
+                        <select id="service" name="service" required>
                             <option value="">सेवा चुनें</option>
                             <option value="aadhaar">Aadhaar Services</option>
-                            <option value="pan">PAN Card</option>
-                            <option value="voter">Voter ID</option>
+                            <option value="pan">PAN Card Services</option>
+                            <option value="voter">Voter Registration</option>
                             <option value="forms">Online Forms</option>
                             <option value="print">Print & Scan</option>
                             <option value="bill">Bill Payment</option>
                             <option value="money">Money Transfer</option>
                             <option value="mobile">Mobile Recharge</option>
-                            <option value="other">Other</option>
+                            <option value="other">Other Services</option>
                         </select>
                     </div>
+
                     <div class="form-group">
-                        <textarea placeholder="आपका संदेश" rows="5" required></textarea>
+                        <textarea id="message" name="message" placeholder="अपना संदेश लिखें" rows="5" required></textarea>
                     </div>
-                    <button type="submit" class="btn btn-primary btn-lg">भेजें</button>
-                    <div class="form-message" id="formMessage"></div>
+
+                    <button type="submit" class="btn btn-primary">संदेश भेजें</button>
+                    <div id="formMessage" class="form-message"></div>
                 </form>
             </div>
         </div>
 
+        <!-- Google Map -->
         <div class="map-section">
-            <h3>हमारा स्थान</h3>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3630.8904817341366!2d85.42535632346919!3d25.95348537070717!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f61e9e9e9e9e9d%3A0x9e9e9e9e9e9e9e9e!2sPratappur%2C%20Bihar!5e0!3m2!1sen!2sin!4v1234567890" allowfullscreen="" loading="lazy"></iframe>
+            <h3>📍 हमारा स्थान</h3>
+            <iframe src="https://www.google.com/maps?q=Pratappur%20Block%20Road%2C%20Pratappur%2C%20Jharkhand&output=embed" allowfullscreen="" loading="lazy"></iframe>
         </div>
     </div>
 </section>
@@ -1331,11 +1372,11 @@
 <!-- CTA Section -->
 <section class="cta-section">
     <div class="container">
-        <h2>अभी शुरू करें</h2>
-        <p>अपनी सभी डिजिटल सेवाओं के लिए आज ही हमसे संपर्क करें</p>
+        <h2>आज ही शुरु करें</h2>
+        <p>अभी call करें या WhatsApp करें और अपनी समस्या का तुरंत समाधान पाएं</p>
         <div class="cta-buttons">
-            <a href="tel:7480949254" class="btn btn-primary btn-lg">📞 अभी कॉल करें</a>
-            <a href="https://wa.me/917480949254" target="_blank" class="btn btn-secondary btn-lg">💬 WhatsApp करें</a>
+            <a href="tel:7480949254" class="btn btn-primary btn-lg">📞 Call Now</a>
+            <a href="https://wa.me/917480949254" target="_blank" class="btn btn-secondary btn-lg">💬 WhatsApp Message</a>
         </div>
     </div>
 </section>
@@ -1345,88 +1386,90 @@
     <div class="container">
         <div class="footer-content">
             <div class="footer-section">
-                <h4>हमारी सेवाएँ</h4>
-                <ul>
-                    <li><a href="#services">Aadhaar Services</a></li>
-                    <li><a href="#services">PAN Card Services</a></li>
-                    <li><a href="#services">Voter Registration</a></li>
-                    <li><a href="#services">Online Forms</a></li>
-                </ul>
+                <h4>APNA DIGITAL STUDIO</h4>
+                <p>आपकी सभी digital सेवाओं के लिए trusted partner</p>
             </div>
 
             <div class="footer-section">
-                <h4>अधिक सेवाएँ</h4>
+                <h4>Quick Links</h4>
                 <ul>
-                    <li><a href="#services">Print & Scan</a></li>
-                    <li><a href="#services">Bill Payment</a></li>
-                    <li><a href="#services">Money Transfer</a></li>
-                    <li><a href="#services">Mobile Recharge</a></li>
-                </ul>
-            </div>
-
-            <div class="footer-section">
-                <h4>जानकारी</h4>
-                <ul>
-                    <li><a href="#about">हमारे बारे में</a></li>
-                    <li><a href="#portfolio">हमारी सफलता</a></li>
-                    <li><a href="#testimonials">ग्राहक समीक्षा</a></li>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#contact">Contact</a></li>
                     <li><a href="#faq">FAQ</a></li>
                 </ul>
             </div>
 
             <div class="footer-section">
-                <h4>संपर्क</h4>
-                <p><i class="fas fa-phone"></i> <a href="tel:7480949254">7480949254</a></p>
-                <p><i class="fas fa-map-marker-alt"></i> Pratappur, Bihar</p>
-                <p><i class="fas fa-clock"></i> सोमवार - शनिवार: 9AM-8PM</p>
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="#services">Aadhaar Services</a></li>
+                    <li><a href="#services">PAN Card</a></li>
+                    <li><a href="#services">Online Forms</a></li>
+                    <li><a href="#services">Bill Payment</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <p><strong>Phone:</strong> <a href="tel:7480949254">7480949254</a></p>
+                <p><strong>Email:</strong> <a href="mailto:nk125691256@gmail.com">nk125691256@gmail.com</a></p>
+                <p><strong>Location:</strong> Pratappur Block Road, Pratappur</p>
             </div>
         </div>
 
         <div class="footer-bottom">
-            <p>&copy; 2024 APNA DIGITAL STUDIO. सभी अधिकार सुरक्षित हैं।</p>
-            <p>CSC VLE - Narendra Kumar | Digital Services Provider</p>
+            <p>&copy; 2024 APNA DIGITAL STUDIO. All Rights Reserved.</p>
+            <p>CSC VLE - Narendra Kumar | Pratappur, Jharkhand</p>
         </div>
     </div>
 </footer>
 
 <script>
-    // FAQ Accordion
-    const faqHeaders = document.querySelectorAll('.faq-header');
-    faqHeaders.forEach(header => {
-        header.addEventListener('click', () => {
-            const faqItem = header.parentElement;
-            faqItem.classList.toggle('active');
-        });
-    });
-
-    // Contact Form
-    const contactForm = document.getElementById('contactForm');
-    contactForm.addEventListener('submit', (e) => {
+// Smooth scrolling
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
         e.preventDefault();
-        const formMessage = document.getElementById('formMessage');
-        const phone = document.querySelector('input[type="tel"]').value;
-        const message = document.querySelector('textarea').value;
-        
-        // Send via WhatsApp
-        const whatsappMessage = encodeURIComponent(`नमस्ते, मैं APNA DIGITAL STUDIO से संपर्क करना चाहता हूँ। संदेश: ${message}`);
-        window.open(`https://wa.me/917480949254?text=${whatsappMessage}`, '_blank');
-        
-        formMessage.textContent = 'आपका संदेश भेज दिया गया है। शीघ्र ही संपर्क किया जाएगा।';
-        formMessage.className = 'form-message success';
-        contactForm.reset();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({ behavior: 'smooth' });
+        }
     });
+});
 
-    // Smooth Scrolling
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                target.scrollIntoView({ behavior: 'smooth' });
-            }
-        });
+// FAQ Toggle
+document.querySelectorAll('.faq-header').forEach(header => {
+    header.addEventListener('click', () => {
+        const faqItem = header.parentElement;
+        faqItem.classList.toggle('active');
     });
+});
+
+// Contact Form
+const contactForm = document.getElementById('contactForm');
+if (contactForm) {
+    contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const phone = document.getElementById('phone').value;
+        const service = document.getElementById('service').value;
+        const message = document.getElementById('message').value;
+        
+        if (name && email && phone && service && message) {
+            const formMessage = document.getElementById('formMessage');
+            formMessage.textContent = 'धन्यवाद! आपका संदेश भेज दिया गया है। हम जल्दी आपसे संपर्क करेंगे।';
+            formMessage.className = 'form-message success';
+            contactForm.reset();
+            
+            setTimeout(() => {
+                formMessage.className = '';
+                formMessage.textContent = '';
+            }, 5000);
+        }
+    });
+}
 </script>
-
 </body>
 </html>
